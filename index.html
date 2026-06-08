@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HealthFirst Diagnostics – Professional home sample collection in Mumbai, Thane & Mumbra. Accurate tests, trusted lab partners, online reports." />
+  <meta name="keywords" content="home sample collection Mumbai, blood test at home, pathology lab Mumbai, HealthFirst Diagnostics" />
+  <title>HealthFirst Diagnostics | Accurate Tests. Trusted Results.</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --primary: #00B7A8;
+      --primary-dark: #009688;
+      --secondary: #0B2A4A;
+      --accent: #14D9C4;
+      --accent-light: #e0faf8;
+      --bg: #F8FCFC;
+      --white: #FFFFFF;
+      --text-dark: #1a2e44;
+      --text-mid: #4a5568;
+      --text-light: #718096;
+      --border: #e2ecec;
+      --card-shadow: 0 4px 24px rgba(0,183,168,0.10);
+      --card-shadow-hover: 0 12px 40px rgba(0,183,168,0.22);
+      --radius: 16px;
+      --radius-sm: 10px;
+      --font: 'Poppins', sans-serif;
+    }
+
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text-dark); overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+    button { cursor: pointer; font-family: var(--font); border: none; outline: none; }
+    input, select, textarea { font-family: var(--font); outline: none; }
+
+    /* ===== UTILITY ===== */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; color: var(--secondary); text-align: center; margin-bottom: 8px; }
+    .section-subtitle { text-align: center; color: var(--text-mid); font-size: 1rem; margin-bottom: 50px; }
+    .divider { width: 60px; height: 4px; background: linear-gradient(90deg, var(--primary), var(--accent)); border-radius: 2px; margin: 10px auto 16px; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff; border-radius: 50px; font-size: 0.95rem; font-weight: 600; transition: all 0.3s; box-shadow: 0 4px 20px rgba(0,183,168,0.35); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,183,168,0.45); }
+    .btn-outline { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; background: transparent; color: var(--secondary); border: 2px solid var(--secondary); border-radius: 50px; font-size: 0.95rem; font-weight: 600; transition: all 0.3s; }
+    .btn-outline:hover { background: var(--secondary); color: #fff; transform: translateY(-2px); }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .fade-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-left.visible { opacity: 1; transform: translateX(0); }
+    .fade-right { opacity: 0; transform: translateX(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* ===========================
+       HEADER / NAV
+    =========================== */
+    #header {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.07); transition: all 0.3s;
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-icon { width: 42px; height: 42px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+    .logo-icon i { color: #fff; font-size: 1.2rem; }
+    .logo-text h1 { font-size: 1.05rem; font-weight: 800; color: var(--secondary); line-height: 1.1; }
+    .logo-text span { font-size: 0.72rem; color: var(--primary); font-weight: 500; }
+    .nav-links { display: flex; align-items: center; gap: 6px; }
+    .nav-links a { padding: 6px 12px; border-radius: 8px; font-size: 0.88rem; font-weight: 500; color: var(--text-dark); transition: all 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); background: var(--accent-light); }
+    .nav-wa { display: flex; align-items: center; gap: 8px; padding: 10px 18px; background: #25D366; color: #fff; border-radius: 50px; font-size: 0.85rem; font-weight: 600; transition: all 0.3s; box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
+    .nav-wa:hover { background: #1fba59; transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
+    .hamburger span { width: 24px; height: 2.5px; background: var(--secondary); border-radius: 2px; transition: all 0.3s; }
+    .mobile-menu { display: none; position: absolute; top: 72px; left: 0; width: 100%; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 20px; flex-direction: column; gap: 4px; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { padding: 12px 16px; border-radius: 10px; font-weight: 500; color: var(--text-dark); transition: all 0.2s; font-size: 0.95rem; }
+    .mobile-menu a:hover { background: var(--accent-light); color: var(--primary); }
+    .mobile-menu .nav-wa { margin-top: 10px; justify-content: center; }
+
+    /* ===========================
+       HERO
+    =========================== */
+    #hero {
+      padding: 100px 0 60px;
+      background: linear-gradient(135deg, #f0fffe 0%, #e6f9f8 40%, #f8fcfc 100%);
+      overflow: hidden; position: relative;
+    }
+    #hero::before {
+      content: ''; position: absolute; top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(0,183,168,0.12) 0%, transparent 70%);
+      border-radius: 50%; pointer-events: none;
+    }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: var(--accent-light); color: var(--primary); padding: 6px 16px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; margin-bottom: 20px; border: 1px solid rgba(0,183,168,0.2); }
+    .hero-title { font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 900; line-height: 1.1; color: var(--secondary); margin-bottom: 18px; }
+    .hero-title span { color: var(--primary); }
+    .hero-desc { font-size: 1.05rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 28px; max-width: 480px; }
+    .hero-features { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 36px; }
+    .hero-feat { display: flex; align-items: center; gap: 8px; background: #fff; padding: 8px 16px; border-radius: 50px; font-size: 0.82rem; font-weight: 600; color: var(--secondary); box-shadow: 0 2px 12px rgba(0,183,168,0.1); border: 1px solid var(--border); }
+    .hero-feat i { color: var(--primary); }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 14px; }
+    .hero-img-wrap { position: relative; }
+    .hero-img-card { border-radius: 24px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,183,168,0.2); position: relative; }
+    .hero-img-card img { width: 100%; height: 460px; object-fit: cover; }
+    .hero-badge {
+      position: absolute; bottom: 24px; left: -20px;
+      background: #fff; border-radius: 16px; padding: 14px 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12); display: flex; align-items: center; gap: 12px;
+    }
+    .hero-badge-icon { width: 44px; height: 44px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+    .hero-badge-icon i { color: #fff; font-size: 1.1rem; }
+    .hero-badge-text strong { display: block; font-size: 1.1rem; font-weight: 800; color: var(--secondary); }
+    .hero-badge-text span { font-size: 0.72rem; color: var(--text-light); }
+    .hero-badge2 {
+      position: absolute; top: 24px; right: -20px;
+      background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 14px; padding: 12px 18px;
+      box-shadow: 0 8px 24px rgba(0,183,168,0.35); color: #fff; text-align: center;
+    }
+    .hero-badge2 strong { display: block; font-size: 1.4rem; font-weight: 900; }
+    .hero-badge2 span { font-size: 0.7rem; opacity: 0.9; }
+
+    /* ===========================
+       SERVICES
+    =========================== */
+    #services { padding: 80px 0; background: #fff; }
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .service-card {
+      background: var(--bg); border-radius: var(--radius); padding: 28px 20px; text-align: center;
+      border: 1px solid var(--border); transition: all 0.35s; cursor: pointer;
+    }
+    .service-card:hover { transform: translateY(-8px); box-shadow: var(--card-shadow-hover); background: #fff; border-color: var(--primary); }
+    .service-icon { width: 64px; height: 64px; background: var(--accent-light); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; transition: all 0.3s; }
+    .service-card:hover .service-icon { background: linear-gradient(135deg, var(--primary), var(--accent)); }
+    .service-icon i { font-size: 1.5rem; color: var(--primary); transition: all 0.3s; }
+    .service-card:hover .service-icon i { color: #fff; }
+    .service-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--secondary); }
+
+    /* ===========================
+       WHY CHOOSE US
+    =========================== */
+    #why { padding: 80px 0; background: linear-gradient(135deg, var(--secondary) 0%, #0d3560 100%); position: relative; overflow: hidden; }
+    #why::before { content: ''; position: absolute; top: -80px; left: -80px; width: 300px; height: 300px; background: rgba(255,255,255,0.03); border-radius: 50%; }
+    #why::after { content: ''; position: absolute; bottom: -60px; right: -60px; width: 250px; height: 250px; background: rgba(0,183,168,0.08); border-radius: 50%; }
+    #why .section-title { color: #fff; }
+    #why .section-subtitle { color: rgba(255,255,255,0.7); }
+    #why .divider { background: linear-gradient(90deg, var(--accent), var(--primary)); }
+    .why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .why-left h3 { font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
+    .why-left p { color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 24px; }
+    .why-list { display: flex; flex-direction: column; gap: 12px; }
+    .why-list li { display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,0.85); font-size: 0.92rem; font-weight: 500; }
+    .why-list li i { width: 28px; height: 28px; background: rgba(0,183,168,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 0.8rem; flex-shrink: 0; }
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .stat-card { background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border-radius: var(--radius); padding: 28px; border: 1px solid rgba(255,255,255,0.1); text-align: center; transition: all 0.3s; }
+    .stat-card:hover { background: rgba(0,183,168,0.15); border-color: rgba(0,183,168,0.4); transform: translateY(-4px); }
+    .stat-num { font-size: 2.4rem; font-weight: 900; color: var(--accent); line-height: 1; margin-bottom: 6px; }
+    .stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.7); font-weight: 500; }
+    .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 20px; }
+    .benefit-item { background: rgba(255,255,255,0.06); border-radius: 10px; padding: 14px; text-align: center; border: 1px solid rgba(255,255,255,0.08); }
+    .benefit-item i { color: var(--accent); font-size: 1.2rem; margin-bottom: 8px; }
+    .benefit-item p { font-size: 0.78rem; color: rgba(255,255,255,0.75); font-weight: 500; }
+
+    /* ===========================
+       LAB PARTNERS
+    =========================== */
+    #partners { padding: 80px 0; background: #fff; }
+    .partners-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .partner-card {
+      border-radius: var(--radius); padding: 40px 30px; text-align: center;
+      border: 2px solid var(--border); transition: all 0.35s; position: relative; overflow: hidden;
+    }
+    .partner-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--primary), var(--accent)); transform: scaleX(0); transition: transform 0.3s; }
+    .partner-card:hover::before { transform: scaleX(1); }
+    .partner-card:hover { transform: translateY(-6px); box-shadow: var(--card-shadow-hover); }
+    .partner-logo { font-size: 1.6rem; font-weight: 900; margin-bottom: 10px; }
+    .partner-card p { font-size: 0.82rem; color: var(--text-light); }
+    .partner-badge { display: inline-block; margin-top: 12px; padding: 5px 14px; background: var(--accent-light); color: var(--primary); border-radius: 50px; font-size: 0.75rem; font-weight: 600; }
+
+    /* ===========================
+       BOOKING FORM
+    =========================== */
+    #booking { padding: 80px 0; background: var(--bg); }
+    .booking-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: stretch; }
+    .booking-form-wrap { background: #fff; border-radius: 24px; padding: 44px; box-shadow: 0 8px 40px rgba(0,183,168,0.1); border: 1px solid rgba(0,183,168,0.1); }
+    .booking-form-wrap h2 { font-size: 1.6rem; font-weight: 800; color: var(--secondary); margin-bottom: 6px; }
+    .booking-form-wrap p { color: var(--text-light); font-size: 0.9rem; margin-bottom: 28px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 7px; margin-bottom: 16px; }
+    .form-group label { font-size: 0.82rem; font-weight: 600; color: var(--secondary); }
+    .form-group input, .form-group select, .form-group textarea {
+      padding: 12px 16px; border: 1.5px solid var(--border); border-radius: 10px;
+      font-size: 0.9rem; color: var(--text-dark); background: var(--bg); transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group select:focus { border-color: var(--primary); background: #fff; }
+    .form-group.error input, .form-group.error select { border-color: #e53e3e; }
+    .form-group .err-msg { font-size: 0.75rem; color: #e53e3e; display: none; }
+    .form-group.error .err-msg { display: block; }
+    .booking-form-wrap .btn-primary { width: 100%; justify-content: center; padding: 14px; font-size: 1rem; border-radius: 12px; }
+    .booking-side { border-radius: 24px; overflow: hidden; position: relative; }
+    .booking-side img { width: 100%; height: 100%; object-fit: cover; min-height: 300px; }
+    .booking-side-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(0deg, rgba(11,42,74,0.9) 0%, transparent 100%); padding: 30px; }
+    .booking-side-overlay h3 { color: #fff; font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
+    .booking-side-features { display: flex; flex-direction: column; gap: 8px; }
+    .booking-side-features li { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85); font-size: 0.85rem; }
+    .booking-side-features li i { color: var(--accent); }
+    .success-msg { display: none; text-align: center; padding: 30px; }
+    .success-msg i { font-size: 3rem; color: var(--primary); margin-bottom: 14px; }
+    .success-msg h3 { font-size: 1.3rem; font-weight: 700; color: var(--secondary); margin-bottom: 8px; }
+    .success-msg p { color: var(--text-mid); }
+
+    /* ===========================
+       POPULAR TESTS
+    =========================== */
+    #tests { padding: 80px 0; background: #fff; }
+    .tests-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .test-card {
+      background: var(--bg); border-radius: var(--radius); padding: 24px; border: 1px solid var(--border);
+      transition: all 0.35s; position: relative; overflow: hidden;
+    }
+    .test-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--primary), var(--accent)); transform: scaleX(0); transition: transform 0.3s; }
+    .test-card:hover::after { transform: scaleX(1); }
+    .test-card:hover { transform: translateY(-6px); box-shadow: var(--card-shadow-hover); background: #fff; }
+    .test-icon { width: 52px; height: 52px; background: var(--accent-light); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+    .test-icon i { font-size: 1.3rem; color: var(--primary); }
+    .discount-badge { position: absolute; top: 16px; right: 16px; background: linear-gradient(135deg, #ff6b35, #ff8c42); color: #fff; padding: 4px 10px; border-radius: 50px; font-size: 0.72rem; font-weight: 700; }
+    .test-card h3 { font-size: 1rem; font-weight: 700; color: var(--secondary); margin-bottom: 6px; }
+    .test-card p { font-size: 0.8rem; color: var(--text-light); line-height: 1.5; margin-bottom: 14px; }
+    .test-pricing { display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px; }
+    .test-price { font-size: 1.4rem; font-weight: 800; color: var(--primary); }
+    .test-original { font-size: 0.88rem; color: var(--text-light); text-decoration: line-through; }
+    .test-card .btn-book { display: block; width: 100%; text-align: center; padding: 10px; border-radius: 10px; background: var(--accent-light); color: var(--primary); font-size: 0.85rem; font-weight: 700; transition: all 0.3s; border: 1.5px solid transparent; }
+    .test-card .btn-book:hover { background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff; border-color: transparent; }
+
+    /* ===========================
+       HOW IT WORKS
+    =========================== */
+    #how { padding: 80px 0; background: linear-gradient(135deg, #f0fffe, #e8f9f8); }
+    .how-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; position: relative; }
+    .how-grid::before { content: ''; position: absolute; top: 48px; left: 12%; right: 12%; height: 2px; background: linear-gradient(90deg, var(--primary), var(--accent)); z-index: 0; }
+    .how-card { text-align: center; position: relative; z-index: 1; }
+    .how-step { width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto 20px; box-shadow: 0 8px 24px rgba(0,183,168,0.3); transition: all 0.3s; }
+    .how-card:hover .how-step { transform: scale(1.1); box-shadow: 0 12px 32px rgba(0,183,168,0.4); }
+    .how-step i { font-size: 1.4rem; color: #fff; }
+    .how-step-num { font-size: 0.65rem; color: rgba(255,255,255,0.8); font-weight: 600; margin-top: 2px; }
+    .how-card h3 { font-size: 1rem; font-weight: 700; color: var(--secondary); margin-bottom: 8px; }
+    .how-card p { font-size: 0.82rem; color: var(--text-mid); line-height: 1.6; }
+
+    /* ===========================
+       TESTIMONIALS
+    =========================== */
+    #testimonials { padding: 80px 0; background: #fff; }
+    .testimonial-slider { position: relative; overflow: hidden; }
+    .testimonial-track { display: flex; transition: transform 0.5s ease; }
+    .testimonial-slide { min-width: calc(33.33% - 14px); margin: 0 7px; }
+    .testi-card { background: var(--bg); border-radius: var(--radius); padding: 28px; border: 1px solid var(--border); height: 100%; transition: all 0.3s; }
+    .testi-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-4px); background: #fff; }
+    .testi-top { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+    .testi-avatar { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 3px solid var(--accent-light); }
+    .testi-name { font-weight: 700; font-size: 0.95rem; color: var(--secondary); }
+    .testi-stars { display: flex; gap: 2px; margin-top: 3px; }
+    .testi-stars i { color: #f6ad55; font-size: 0.75rem; }
+    .testi-text { font-size: 0.88rem; color: var(--text-mid); line-height: 1.7; font-style: italic; }
+    .testi-quote { font-size: 2rem; color: var(--accent); line-height: 1; margin-bottom: 8px; }
+    .slider-controls { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 36px; }
+    .slider-btn { width: 44px; height: 44px; border-radius: 50%; background: #fff; border: 2px solid var(--border); color: var(--secondary); display: flex; align-items: center; justify-content: center; transition: all 0.3s; cursor: pointer; }
+    .slider-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .slider-dots { display: flex; gap: 8px; }
+    .slider-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--border); cursor: pointer; transition: all 0.3s; }
+    .slider-dot.active { background: var(--primary); width: 28px; border-radius: 5px; }
+
+    /* ===========================
+       FAQ
+    =========================== */
+    #faq { padding: 80px 0; background: var(--bg); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 950px; margin: 0 auto; }
+    .faq-item { background: #fff; border-radius: var(--radius-sm); border: 1px solid var(--border); overflow: hidden; }
+    .faq-q { display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; cursor: pointer; font-weight: 600; font-size: 0.9rem; color: var(--secondary); transition: all 0.2s; gap: 12px; }
+    .faq-q:hover { color: var(--primary); }
+    .faq-q i { width: 28px; height: 28px; border-radius: 50%; background: var(--accent-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; flex-shrink: 0; transition: all 0.3s; }
+    .faq-item.open .faq-q i { background: var(--primary); color: #fff; transform: rotate(45deg); }
+    .faq-a { padding: 0 22px; max-height: 0; overflow: hidden; transition: all 0.35s ease; font-size: 0.85rem; color: var(--text-mid); line-height: 1.7; }
+    .faq-item.open .faq-a { max-height: 200px; padding: 0 22px 18px; }
+
+    /* ===========================
+       CONTACT
+    =========================== */
+    #contact { padding: 80px 0; background: #fff; }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; }
+    .contact-info h3 { font-size: 1.5rem; font-weight: 800; color: var(--secondary); margin-bottom: 16px; }
+    .contact-info p { color: var(--text-mid); line-height: 1.7; margin-bottom: 30px; }
+    .contact-items { display: flex; flex-direction: column; gap: 18px; margin-bottom: 32px; }
+    .contact-item { display: flex; align-items: center; gap: 16px; }
+    .contact-icon { width: 48px; height: 48px; background: var(--accent-light); border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-icon i { color: var(--primary); font-size: 1.1rem; }
+    .contact-item h4 { font-size: 0.8rem; color: var(--text-light); margin-bottom: 2px; }
+    .contact-item p { color: var(--secondary); font-weight: 600; font-size: 0.92rem; margin: 0; }
+    .map-placeholder { border-radius: 16px; overflow: hidden; height: 200px; background: linear-gradient(135deg, #e0f7fa, #b2ebf2); display: flex; align-items: center; justify-content: center; border: 2px dashed rgba(0,183,168,0.3); }
+    .map-placeholder p { color: var(--primary); font-weight: 600; font-size: 0.9rem; }
+    .contact-form-wrap { background: var(--bg); border-radius: 24px; padding: 40px; border: 1px solid var(--border); }
+    .contact-form-wrap h3 { font-size: 1.3rem; font-weight: 700; color: var(--secondary); margin-bottom: 24px; }
+    .contact-form-wrap .btn-primary { width: 100%; justify-content: center; }
+
+    /* ===========================
+       WHATSAPP FLOAT
+    =========================== */
+    .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 9999; }
+    .wa-float a { display: flex; align-items: center; gap: 10px; background: #25D366; color: #fff; padding: 14px 22px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; box-shadow: 0 6px 25px rgba(37,211,102,0.45); transition: all 0.3s; animation: waPulse 2s infinite; }
+    .wa-float a:hover { background: #1fba59; transform: scale(1.05); }
+    .wa-float i { font-size: 1.3rem; }
+    @keyframes waPulse { 0%, 100% { box-shadow: 0 6px 25px rgba(37,211,102,0.45); } 50% { box-shadow: 0 6px 35px rgba(37,211,102,0.7); } }
+
+    /* ===========================
+       FOOTER
+    =========================== */
+    footer { background: var(--secondary); color: rgba(255,255,255,0.8); padding: 60px 0 0; }
+    .footer-inner { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-brand .logo { margin-bottom: 16px; }
+    .footer-brand .logo-text h1 { color: #fff; }
+    .footer-brand p { font-size: 0.85rem; line-height: 1.7; color: rgba(255,255,255,0.6); margin-bottom: 20px; }
+    .social-links { display: flex; gap: 10px; }
+    .social-links a { width: 38px; height: 38px; border-radius: 10px; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.7); transition: all 0.3s; }
+    .social-links a:hover { background: var(--primary); color: #fff; transform: translateY(-2px); }
+    .footer-col h4 { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 18px; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a { font-size: 0.84rem; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--accent); }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; font-size: 0.84rem; }
+    .footer-contact-item i { color: var(--accent); margin-top: 3px; flex-shrink: 0; }
+    .footer-contact-item span { color: rgba(255,255,255,0.6); line-height: 1.5; }
+    .footer-wa { display: inline-flex; align-items: center; gap: 8px; background: #25D366; color: #fff; padding: 10px 18px; border-radius: 10px; font-size: 0.83rem; font-weight: 600; transition: all 0.3s; margin-top: 8px; }
+    .footer-wa:hover { background: #1fba59; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .footer-bottom p { font-size: 0.82rem; color: rgba(255,255,255,0.4); }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-links a { font-size: 0.82rem; color: rgba(255,255,255,0.4); transition: color 0.2s; }
+    .footer-bottom-links a:hover { color: var(--accent); }
+
+    /* ===========================
+       RESPONSIVE
+    =========================== */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(4, 1fr); }
+      .tests-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-img-wrap { order: -1; }
+      .hero-img-card img { height: 320px; }
+      .hero-badge { left: 0; }
+      .why-inner { grid-template-columns: 1fr; }
+      .booking-inner { grid-template-columns: 1fr; }
+      .booking-side { display: none; }
+      .contact-inner { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .how-grid::before { display: none; }
+      .how-grid { grid-template-columns: repeat(2, 1fr); }
+      .partners-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-wa { display: none; }
+      .hamburger { display: flex; }
+      .hero-btns { flex-direction: column; }
+      .btn-primary, .btn-outline { width: 100%; justify-content: center; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .form-row { grid-template-columns: 1fr; }
+      .tests-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonial-slide { min-width: calc(100% - 14px); }
+      .how-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .tests-grid { grid-template-columns: 1fr; }
+      .how-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .hero-badge2 { display: none; }
+      .wa-float a span { display: none; }
+      .wa-float a { border-radius: 50%; width: 56px; height: 56px; justify-content: center; padding: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header id="header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="#hero" class="logo">
+        <div class="logo-icon"><i class="fas fa-flask"></i></div>
+        <div class="logo-text"><h1>HealthFirst<br>Diagnostics</h1><span>Tests You Can Trust</span></div>
+      </a>
+      <div class="nav-links">
+        <a href="#hero" class="active">Home</a>
+        <a href="#why">About</a>
+        <a href="#tests">Tests &amp; Packages</a>
+        <a href="#why">Why Us</a>
+        <a href="#partners">Our Labs</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="https://wa.me/919876543210?text=Hi%2C%20I%20want%20to%20book%20a%20home%20sample%20collection" target="_blank" class="nav-wa">
+        <i class="fab fa-whatsapp"></i> Book on WhatsApp
+      </a>
+      <div class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#hero">Home</a>
+      <a href="#why">About</a>
+      <a href="#tests">Tests &amp; Packages</a>
+      <a href="#why">Why Us</a>
+      <a href="#partners">Our Labs</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a href="https://wa.me/919876543210" target="_blank" class="nav-wa"><i class="fab fa-whatsapp"></i> Book on WhatsApp +91 98765 43210</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-left fade-left">
+        <div class="hero-tag"><i class="fas fa-certificate"></i> Trusted by 1000+ Families in Mumbai</div>
+        <h2 class="hero-title">Accurate Tests.<br><span>Trusted Results.</span></h2>
+        <p class="hero-desc">Professional home sample collection by certified phlebotomists. Fast reporting from trusted laboratory partners — right at your doorstep.</p>
+        <div class="hero-features">
+          <div class="hero-feat"><i class="fas fa-home"></i> Home Sample Collection</div>
+          <div class="hero-feat"><i class="fas fa-clock"></i> On-time Reporting</div>
+          <div class="hero-feat"><i class="fas fa-user-nurse"></i> Certified Phlebotomists</div>
+          <div class="hero-feat"><i class="fas fa-microscope"></i> Trusted Lab Partners</div>
+        </div>
+        <div class="hero-btns">
+          <a href="#booking" class="btn-primary"><i class="fas fa-calendar-check"></i> Book Home Collection</a>
+          <a href="#tests" class="btn-outline"><i class="fas fa-vials"></i> View All Tests</a>
+        </div>
+      </div>
+      <div class="hero-img-wrap fade-right">
+        <div class="hero-img-card">
+          <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=700&q=80" alt="Phlebotomist collecting blood sample at home" loading="lazy" />
+        </div>
+        <div class="hero-badge">
+          <div class="hero-badge-icon"><i class="fas fa-user-nurse"></i></div>
+          <div class="hero-badge-text"><strong>10+</strong><span>Expert Phlebotomists</span></div>
+        </div>
+        <div class="hero-badge2"><strong>24–48 Hrs</strong><span>Report Delivery</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+  <div class="container">
+    <h2 class="section-title fade-in">Our Services</h2>
+    <div class="divider"></div>
+    <p class="section-subtitle fade-in">Everything you need, delivered to your doorstep.</p>
+    <div class="services-grid">
+      <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-home"></i></div><h3>Home Sample Collection</h3></div>
+      <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-tint"></i></div><h3>Blood Tests</h3></div>
+      <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-heartbeat"></i></div><h3>Full Body Checkups</h3></div>
+      <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-syringe"></i></div><h3>Diabetes Care</h3></div>
+      <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-dna"></i></div><h3>Thyroid Profile</h3></div>
+      <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-venus"></i></div><h3>Women's Health</h3></div>
+      <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-user-friends"></i></div><h3>Senior Citizen Packages</h3></div>
+      <div class="service-card fade-in"><div class="service-icon"><i class="fas fa-file-medical-alt"></i></div><h3>Online Reports</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY CHOOSE US ===== -->
+<section id="why">
+  <div class="container">
+    <h2 class="section-title fade-in">Why Choose HealthFirst Diagnostics?</h2>
+    <div class="divider fade-in"></div>
+    <p class="section-subtitle fade-in">We are committed to provide quality diagnostic services at your doorstep.</p>
+    <div class="why-inner">
+      <div class="fade-left">
+        <ul class="why-list">
+          <li><i class="fas fa-check"></i> Trained &amp; Verified Phlebotomists</li>
+          <li><i class="fas fa-check"></i> Safe &amp; Hygienic Sample Collection</li>
+          <li><i class="fas fa-check"></i> Reports from Top NABL Accredited Labs</li>
+          <li><i class="fas fa-check"></i> Timely Reports &amp; Easy Online Access</li>
+          <li><i class="fas fa-check"></i> 100% Customer Satisfaction</li>
+          <li><i class="fas fa-check"></i> Affordable &amp; Transparent Pricing</li>
+        </ul>
+        <div class="benefits-grid" style="margin-top:30px;">
+          <div class="benefit-item"><i class="fas fa-shield-alt"></i><p>Safe Collection</p></div>
+          <div class="benefit-item"><i class="fas fa-bolt"></i><p>Fast Reports</p></div>
+          <div class="benefit-item"><i class="fas fa-headset"></i><p>24/7 Support</p></div>
+          <div class="benefit-item"><i class="fas fa-medal"></i><p>Certified Staff</p></div>
+          <div class="benefit-item"><i class="fas fa-tag"></i><p>Best Prices</p></div>
+          <div class="benefit-item"><i class="fas fa-flask"></i><p>Trusted Labs</p></div>
+        </div>
+      </div>
+      <div class="fade-right">
+        <div class="stats-grid">
+          <div class="stat-card"><div class="stat-num" data-count="10">0+</div><div class="stat-label">Certified Phlebotomists</div></div>
+          <div class="stat-card"><div class="stat-num" data-count="1000">0+</div><div class="stat-label">Happy Families</div></div>
+          <div class="stat-card"><div class="stat-num" data-count="3">0</div><div class="stat-label">Trusted Lab Partners</div></div>
+          <div class="stat-card"><div class="stat-num" data-count="48">0</div><div class="stat-label">Hours Report Delivery</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LAB PARTNERS ===== -->
+<section id="partners">
+  <div class="container">
+    <h2 class="section-title fade-in">Our Lab Partners</h2>
+    <div class="divider"></div>
+    <p class="section-subtitle fade-in">Your samples are processed only at NABL-accredited, trusted laboratories.</p>
+    <div class="partners-grid">
+      <div class="partner-card fade-in">
+        <div class="partner-logo" style="color:#6d1ed4;">SUBURBAN<br><span style="font-size:0.85rem;color:#9b59b6;letter-spacing:3px;">DIAGNOSTICS</span></div>
+        <p>NABL &amp; NABH accredited diagnostic chain across Mumbai with 50+ collection centers.</p>
+        <span class="partner-badge"><i class="fas fa-check-circle"></i> Verified Partner</span>
+      </div>
+      <div class="partner-card fade-in">
+        <div class="partner-logo" style="color:#1a73e8;">Metropolis<br><span style="font-size:0.8rem;color:#4a90d9;font-weight:500;">Healthcare</span></div>
+        <p>Pan-India pathology specialist with state-of-the-art labs and 4,000+ tests.</p>
+        <span class="partner-badge"><i class="fas fa-check-circle"></i> Verified Partner</span>
+      </div>
+      <div class="partner-card fade-in">
+        <div class="partner-logo" style="color:#e63946;">Thyro<span style="color:#f4a261;">care</span></div>
+        <p>India's largest preventive healthcare &amp; wellness company — tests you can trust.</p>
+        <span class="partner-badge"><i class="fas fa-check-circle"></i> Verified Partner</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BOOKING FORM ===== -->
+<section id="booking">
+  <div class="container">
+    <h2 class="section-title fade-in">Book Home Sample Collection</h2>
+    <div class="divider"></div>
+    <p class="section-subtitle fade-in">Quick, easy and safe. Our phlebotomist will arrive at your chosen time.</p>
+    <div class="booking-inner">
+      <div class="booking-form-wrap fade-left">
+        <h2>Book Your Slot</h2>
+        <p>Fill in your details and we'll confirm your appointment within minutes.</p>
+        <div id="bookingSuccess" class="success-msg">
+          <i class="fas fa-check-circle"></i>
+          <h3>Booking Confirmed!</h3>
+          <p>We'll call you shortly to confirm your appointment. You can also reach us on WhatsApp at +91 98765 43210.</p>
+        </div>
+        <form id="bookingForm" novalidate>
+          <div class="form-row">
+            <div class="form-group" id="fg-name">
+              <label for="b-name">Full Name *</label>
+              <input type="text" id="b-name" placeholder="Ramesh Sharma" />
+              <span class="err-msg">Please enter your full name.</span>
+            </div>
+            <div class="form-group" id="fg-phone">
+              <label for="b-phone">Mobile Number *</label>
+              <input type="tel" id="b-phone" placeholder="+91 98765 43210" />
+              <span class="err-msg">Enter a valid 10-digit mobile number.</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group" id="fg-email">
+              <label for="b-email">Email Address</label>
+              <input type="email" id="b-email" placeholder="ramesh@email.com" />
+              <span class="err-msg">Enter a valid email address.</span>
+            </div>
+            <div class="form-group" id="fg-area">
+              <label for="b-area">Area / Location *</label>
+              <input type="text" id="b-area" placeholder="Andheri, Mumbai" />
+              <span class="err-msg">Please enter your area.</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group" id="fg-date">
+              <label for="b-date">Preferred Date *</label>
+              <input type="date" id="b-date" />
+              <span class="err-msg">Please select a date.</span>
+            </div>
+            <div class="form-group" id="fg-time">
+              <label for="b-time">Preferred Time *</label>
+              <select id="b-time">
+                <option value="">Select Time Slot</option>
+                <option>6:00 AM – 8:00 AM</option>
+                <option>8:00 AM – 10:00 AM</option>
+                <option>10:00 AM – 12:00 PM</option>
+                <option>12:00 PM – 2:00 PM</option>
+                <option>2:00 PM – 4:00 PM</option>
+                <option>4:00 PM – 6:00 PM</option>
+              </select>
+              <span class="err-msg">Please select a time slot.</span>
+            </div>
+          </div>
+          <div class="form-group" id="fg-test">
+            <label for="b-test">Select Test / Package *</label>
+            <select id="b-test">
+              <option value="">Choose a Test or Package</option>
+              <option>Full Body Checkup – ₹1499</option>
+              <option>Diabetes Profile – ₹699</option>
+              <option>Thyroid Profile – ₹899</option>
+              <option>Women's Health Package – ₹1299</option>
+              <option>Senior Citizen Package – ₹1999</option>
+              <option>CBC Test – ₹299</option>
+              <option>Vitamin D Test – ₹799</option>
+              <option>Liver Function Test – ₹599</option>
+              <option>Other / I'll tell later</option>
+            </select>
+            <span class="err-msg">Please select a test.</span>
+          </div>
+          <button type="submit" class="btn-primary"><i class="fas fa-calendar-check"></i> Book Collection</button>
+        </form>
+      </div>
+      <div class="booking-side fade-right">
+        <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&q=80" alt="Healthcare professional at home" loading="lazy" />
+        <div class="booking-side-overlay">
+          <h3>Expert Care Right at Your Doorstep</h3>
+          <ul class="booking-side-features">
+            <li><i class="fas fa-check-circle"></i> Punctual &amp; Reliable Visits</li>
+            <li><i class="fas fa-check-circle"></i> Hygienic &amp; Safe Collection</li>
+            <li><i class="fas fa-check-circle"></i> Experienced Professionals</li>
+            <li><i class="fas fa-check-circle"></i> Affordable Pricing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== POPULAR TESTS ===== -->
+<section id="tests">
+  <div class="container">
+    <h2 class="section-title fade-in">Popular Tests &amp; Packages</h2>
+    <div class="divider"></div>
+    <p class="section-subtitle fade-in">Comprehensive health packages at unbeatable prices.</p>
+    <div class="tests-grid">
+      <div class="test-card fade-in">
+        <span class="discount-badge">42% OFF</span>
+        <div class="test-icon"><i class="fas fa-clipboard-list"></i></div>
+        <h3>Full Body Checkup</h3>
+        <p>A complete checkup of your overall health — 70+ parameters covered.</p>
+        <div class="test-pricing"><span class="test-price">₹1499</span><span class="test-original">₹2599</span></div>
+        <a href="#booking" class="btn-book">Book Now</a>
+      </div>
+      <div class="test-card fade-in">
+        <span class="discount-badge">42% OFF</span>
+        <div class="test-icon"><i class="fas fa-tint"></i></div>
+        <h3>Diabetes Profile</h3>
+        <p>Essential tests to monitor diabetes &amp; sugar levels including HbA1c &amp; fasting glucose.</p>
+        <div class="test-pricing"><span class="test-price">₹699</span><span class="test-original">₹1200</span></div>
+        <a href="#booking" class="btn-book">Book Now</a>
+      </div>
+      <div class="test-card fade-in">
+        <span class="discount-badge">40% OFF</span>
+        <div class="test-icon"><i class="fas fa-dna"></i></div>
+        <h3>Thyroid Profile</h3>
+        <p>Complete thyroid evaluation including T3, T4, TSH for better care.</p>
+        <div class="test-pricing"><span class="test-price">₹899</span><span class="test-original">₹1500</span></div>
+        <a href="#booking" class="btn-book">Book Now</a>
+      </div>
+      <div class="test-card fade-in">
+        <span class="discount-badge">41% OFF</span>
+        <div class="test-icon"><i class="fas fa-venus"></i></div>
+        <h3>Women's Health Package</h3>
+        <p>Specialized tests for women's wellness including hormones, iron &amp; vitamin panel.</p>
+        <div class="test-pricing"><span class="test-price">₹1299</span><span class="test-original">₹2200</span></div>
+        <a href="#booking" class="btn-book">Book Now</a>
+      </div>
+      <div class="test-card fade-in">
+        <span class="discount-badge">43% OFF</span>
+        <div class="test-icon"><i class="fas fa-user-friends"></i></div>
+        <h3>Senior Citizen Package</h3>
+        <p>Comprehensive age-specific health screening covering 90+ vital parameters.</p>
+        <div class="test-pricing"><span class="test-price">₹1999</span><span class="test-original">₹3499</span></div>
+        <a href="#booking" class="btn-book">Book Now</a>
+      </div>
+      <div class="test-card fade-in">
+        <span class="discount-badge">40% OFF</span>
+        <div class="test-icon"><i class="fas fa-vial"></i></div>
+        <h3>CBC Test</h3>
+        <p>Complete Blood Count — essential baseline test for overall health assessment.</p>
+        <div class="test-pricing"><span class="test-price">₹299</span><span class="test-original">₹499</span></div>
+        <a href="#booking" class="btn-book">Book Now</a>
+      </div>
+      <div class="test-card fade-in">
+        <span class="discount-badge">47% OFF</span>
+        <div class="test-icon"><i class="fas fa-sun"></i></div>
+        <h3>Vitamin D Test</h3>
+        <p>Measure your Vitamin D3 levels — critical for bone health and immunity.</p>
+        <div class="test-pricing"><span class="test-price">₹799</span><span class="test-original">₹1499</span></div>
+        <a href="#booking" class="btn-book">Book Now</a>
+      </div>
+      <div class="test-card fade-in">
+        <span class="discount-badge">40% OFF</span>
+        <div class="test-icon"><i class="fas fa-liver" style="font-size:1rem"></i><i class="fas fa-heartbeat" style="font-size:1rem"></i></div>
+        <h3>Liver Function Test</h3>
+        <p>Evaluate liver health with complete LFT panel — SGOT, SGPT, bilirubin &amp; more.</p>
+        <div class="test-pricing"><span class="test-price">₹599</span><span class="test-original">₹999</span></div>
+        <a href="#booking" class="btn-book">Book Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section id="how">
+  <div class="container">
+    <h2 class="section-title fade-in">How It Works?</h2>
+    <div class="divider"></div>
+    <p class="section-subtitle fade-in">Simple 4-step process from booking to receiving your reports.</p>
+    <div class="how-grid">
+      <div class="how-card fade-in">
+        <div class="how-step"><i class="fas fa-calendar-check"></i><span class="how-step-num">STEP 1</span></div>
+        <h3>Book Your Slot</h3>
+        <p>Choose your preferred date and time online or via WhatsApp. Quick and simple.</p>
+      </div>
+      <div class="how-card fade-in" style="transition-delay:0.1s">
+        <div class="how-step"><i class="fas fa-user-nurse"></i><span class="how-step-num">STEP 2</span></div>
+        <h3>We Collect Sample</h3>
+        <p>Our certified phlebotomist visits your home with all sterile equipment.</p>
+      </div>
+      <div class="how-card fade-in" style="transition-delay:0.2s">
+        <div class="how-step"><i class="fas fa-shipping-fast"></i><span class="how-step-num">STEP 3</span></div>
+        <h3>Sample Sent to Lab</h3>
+        <p>Your sample is analysed in NABL-accredited partner laboratories.</p>
+      </div>
+      <div class="how-card fade-in" style="transition-delay:0.3s">
+        <div class="how-step"><i class="fas fa-file-medical"></i><span class="how-step-num">STEP 4</span></div>
+        <h3>Receive Reports Online</h3>
+        <p>Reports delivered to your WhatsApp or email within 24–48 hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section id="testimonials">
+  <div class="container">
+    <h2 class="section-title fade-in">Trusted by Thousands <i class="fas fa-quote-right" style="color:var(--primary);font-size:1.4rem;"></i></h2>
+    <div class="divider"></div>
+    <p class="section-subtitle fade-in">What our happy customers say about us.</p>
+    <div class="testimonial-slider fade-in">
+      <div class="testimonial-track" id="testiTrack">
+
+        <div class="testimonial-slide">
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <div class="testi-top">
+              <img class="testi-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ramesh Kumar" />
+              <div><div class="testi-name">Ramesh Kumar</div><div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+            </div>
+            <p class="testi-text">Very professional and on-time service. Reports were delivered before expected. The phlebotomist was courteous and the collection process was completely painless. Highly recommended!</p>
+          </div>
+        </div>
+
+        <div class="testimonial-slide">
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <div class="testi-top">
+              <img class="testi-avatar" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Sharma" />
+              <div><div class="testi-name">Priya Sharma</div><div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+            </div>
+            <p class="testi-text">Good experience overall. The phlebotomist was polite and the collection was done smoothly. Got my thyroid reports on WhatsApp within 24 hours. Will definitely use again. Keep it up!</p>
+          </div>
+        </div>
+
+        <div class="testimonial-slide">
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <div class="testi-top">
+              <img class="testi-avatar" src="https://randomuser.me/api/portraits/men/56.jpg" alt="Ankit Mehta" />
+              <div><div class="testi-name">Ankit Mehta</div><div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div></div>
+            </div>
+            <p class="testi-text">Affordable pricing and reliable reports. Best home collection service in our area of Thane. Booked at 8 PM and they came the next morning at 7 AM sharp. Great service!</p>
+          </div>
+        </div>
+
+        <div class="testimonial-slide">
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <div class="testi-top">
+              <img class="testi-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sunita Nair" />
+              <div><div class="testi-name">Sunita Nair</div><div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+            </div>
+            <p class="testi-text">I booked the Senior Citizen Package for my parents. The team was extremely caring and patient with elderly patients. Price was much lower than walking into a lab. Thank you HealthFirst!</p>
+          </div>
+        </div>
+
+        <div class="testimonial-slide">
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <div class="testi-top">
+              <img class="testi-avatar" src="https://randomuser.me/api/portraits/men/73.jpg" alt="Vijay Patil" />
+              <div><div class="testi-name">Vijay Patil</div><div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+            </div>
+            <p class="testi-text">Excellent service! Phlebotomist arrived on time and was very professional. Reports were from Metropolis and were detailed and accurate. Saved me a trip to the lab entirely!</p>
+          </div>
+        </div>
+
+        <div class="testimonial-slide">
+          <div class="testi-card">
+            <div class="testi-quote">"</div>
+            <div class="testi-top">
+              <img class="testi-avatar" src="https://randomuser.me/api/portraits/women/25.jpg" alt="Kavya Iyer" />
+              <div><div class="testi-name">Kavya Iyer</div><div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+            </div>
+            <p class="testi-text">Booked Women's Health Package. The lady phlebotomist made the entire experience comfortable and reassuring. Reports were clear and I shared them with my gynaecologist directly. 5 stars!</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="slider-controls">
+      <button class="slider-btn" id="testiPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+      <div class="slider-dots" id="testiDots"></div>
+      <button class="slider-btn" id="testiNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq">
+  <div class="container">
+    <h2 class="section-title fade-in">Frequently Asked Questions</h2>
+    <div class="divider"></div>
+    <p class="section-subtitle fade-in">Have questions? We have answers.</p>
+    <div class="faq-grid">
+
+      <div class="faq-item fade-in">
+        <div class="faq-q">How does home sample collection work? <i class="fas fa-plus"></i></div>
+        <div class="faq-a">Book a slot online or via WhatsApp. Our certified phlebotomist visits your home with sterile equipment, collects the sample, and delivers it to our partner lab. Reports are shared online within 24–48 hours.</div>
+      </div>
+
+      <div class="faq-item fade-in">
+        <div class="faq-q">How long do reports take? <i class="fas fa-plus"></i></div>
+        <div class="faq-a">Most routine reports are delivered within 24–48 hours. Some specialized tests may take 3–5 days. We will inform you in advance about the turnaround time for your specific test.</div>
+      </div>
+
+      <div class="faq-item fade-in">
+        <div class="faq-q">Are your phlebotomists certified? <i class="fas fa-plus"></i></div>
+        <div class="faq-a">Yes, all our 10 phlebotomists are trained, certified and background-verified professionals. They follow strict safety and hygiene protocols including use of sterile, single-use equipment.</div>
+      </div>
+
+      <div class="faq-item fade-in">
+        <div class="faq-q">Which areas do you serve? <i class="fas fa-plus"></i></div>
+        <div class="faq-a">We currently serve Mumbai, Thane, and Mumbra. We are actively expanding. If your area is not covered, please contact us and we will try our best to accommodate you.</div>
+      </div>
+
+      <div class="faq-item fade-in">
+        <div class="faq-q">Are your lab partners NABL accredited? <i class="fas fa-plus"></i></div>
+        <div class="faq-a">Yes. We are tied up with Suburban Diagnostics, Metropolis Healthcare, and Thyrocare — all of which are NABL and NABH accredited laboratories with a proven track record of accuracy.</div>
+      </div>
+
+      <div class="faq-item fade-in">
+        <div class="faq-q">How do I receive my reports? <i class="fas fa-plus"></i></div>
+        <div class="faq-a">Reports are delivered digitally via WhatsApp and email. You will receive a secure PDF link which you can share with your doctor directly. Physical copies are available on request.</div>
+      </div>
+
+      <div class="faq-item fade-in">
+        <div class="faq-q">Do I need to be fasting for my test? <i class="fas fa-plus"></i></div>
+        <div class="faq-a">Some tests like fasting blood glucose, lipid profile, and liver function tests require 8–12 hours of fasting. We will inform you of fasting requirements when you book. Non-fasting slots are available for other tests.</div>
+      </div>
+
+      <div class="faq-item fade-in">
+        <div class="faq-q">What is your cancellation policy? <i class="fas fa-plus"></i></div>
+        <div class="faq-a">You can cancel or reschedule your appointment up to 2 hours before the scheduled time at no charge. Contact us via WhatsApp or call for any changes. We understand that health plans can change!</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title fade-in">Get In Touch</h2>
+    <div class="divider"></div>
+    <p class="section-subtitle fade-in">Have a question or need help booking? We're here for you.</p>
+    <div class="contact-inner">
+      <div class="fade-left">
+        <h3>We'd Love to Hear From You</h3>
+        <p>Whether you want to book a test, have a query about a package, or need help with your reports — our friendly team is always ready to assist.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+            <div><h4>Phone / WhatsApp</h4><p>+91 98765 43210</p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div><h4>Email</h4><p>info@healthfirstdiagnostics.com</p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div><h4>Service Areas</h4><p>Mumbai · Thane · Mumbra, Maharashtra</p></div>
+          </div>
+        </div>
+        <div class="map-placeholder">
+          <p><i class="fas fa-map-marker-alt" style="margin-right:8px;"></i> Mumbai, Maharashtra, India</p>
+        </div>
+      </div>
+      <div class="contact-form-wrap fade-right">
+        <h3>Send Us a Message</h3>
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group" id="cfg-name">
+              <label for="c-name">Your Name *</label>
+              <input type="text" id="c-name" placeholder="Ramesh Sharma" />
+              <span class="err-msg">Please enter your name.</span>
+            </div>
+            <div class="form-group" id="cfg-phone">
+              <label for="c-phone">Mobile Number *</label>
+              <input type="tel" id="c-phone" placeholder="+91 98765 43210" />
+              <span class="err-msg">Enter a valid mobile number.</span>
+            </div>
+          </div>
+          <div class="form-group" id="cfg-email">
+            <label for="c-email">Email Address</label>
+            <input type="email" id="c-email" placeholder="ramesh@email.com" />
+            <span class="err-msg">Enter a valid email.</span>
+          </div>
+          <div class="form-group">
+            <label for="c-msg">Your Message *</label>
+            <textarea id="c-msg" rows="4" placeholder="I want to enquire about the Full Body Checkup package..." style="resize:vertical; padding:12px 16px; border:1.5px solid var(--border); border-radius:10px; font-size:0.9rem; background:var(--bg); transition: border-color 0.2s;"></textarea>
+          </div>
+          <button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i> Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHATSAPP FLOAT ===== -->
+<div class="wa-float">
+  <a href="https://wa.me/919876543210?text=Hi%2C%20I%20want%20to%20book%20a%20home%20sample%20collection" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i> <span>Book on WhatsApp</span>
+  </a>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#hero" class="logo">
+          <div class="logo-icon"><i class="fas fa-flask"></i></div>
+          <div class="logo-text"><h1>HealthFirst<br>Diagnostics</h1><span style="color:var(--accent)">Tests You Can Trust</span></div>
+        </a>
+        <p>Accurate testing, timely reports and home sample collection by experts. Your health is our priority.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/919876543210" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#why">About Us</a></li>
+          <li><a href="#tests">Tests &amp; Packages</a></li>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#partners">Our Labs</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="#booking">Home Sample Collection</a></li>
+          <li><a href="#tests">Blood Tests</a></li>
+          <li><a href="#tests">Health Packages</a></li>
+          <li><a href="#tests">Diabetes Care</a></li>
+          <li><a href="#tests">Thyroid Profile</a></li>
+          <li><a href="#tests">Women's Health</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><span>+91 98765 43210</span></div>
+        <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>info@healthfirstdiagnostics.com</span></div>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Mumbra, Thane, Maharashtra</span></div>
+        <a href="https://wa.me/919876543210" target="_blank" class="footer-wa"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 HealthFirst Diagnostics. All Rights Reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+  // ===== HAMBURGER MENU =====
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    const spans = hamburger.querySelectorAll('span');
+    if (mobileMenu.classList.contains('open')) {
+      spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+    } else {
+      spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+    }
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    hamburger.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+  }));
+
+  // ===== ACTIVE NAV ON SCROLL =====
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
+    navLinks.forEach(a => { a.classList.remove('active'); if (a.getAttribute('href') === '#' + cur) a.classList.add('active'); });
+  });
+
+  // ===== SCROLL ANIMATIONS =====
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in, .fade-left, .fade-right').forEach(el => observer.observe(el));
+
+  // ===== COUNTER ANIMATION =====
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.getAttribute('data-count'));
+        const suffix = target >= 1000 ? '+' : (target === 48 ? ' Hrs' : (target === 3 ? '' : '+'));
+        let cur = 0;
+        const step = Math.ceil(target / 60);
+        const timer = setInterval(() => {
+          cur = Math.min(cur + step, target);
+          el.textContent = (cur >= 1000 ? cur.toLocaleString('en-IN') : cur) + suffix;
+          if (cur >= target) clearInterval(timer);
+        }, 30);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+
+  // ===== FAQ ACCORDION =====
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // ===== TESTIMONIAL SLIDER =====
+  const track = document.getElementById('testiTrack');
+  const slides = track.querySelectorAll('.testimonial-slide');
+  const dotsContainer = document.getElementById('testiDots');
+  let currentSlide = 0;
+  let slidesPerView = window.innerWidth < 768 ? 1 : 3;
+  let totalGroups = Math.ceil(slides.length / slidesPerView);
+
+  function buildDots() {
+    dotsContainer.innerHTML = '';
+    slidesPerView = window.innerWidth < 768 ? 1 : 3;
+    totalGroups = Math.ceil(slides.length / slidesPerView);
+    for (let i = 0; i < totalGroups; i++) {
+      const d = document.createElement('div');
+      d.className = 'slider-dot' + (i === 0 ? ' active' : '');
+      d.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(d);
+    }
+  }
+
+  function goTo(idx) {
+    currentSlide = (idx + totalGroups) % totalGroups;
+    const offset = currentSlide * slidesPerView;
+    const slideWidth = slides[0].offsetWidth + 14;
+    track.style.transform = `translateX(-${offset * slideWidth}px)`;
+    dotsContainer.querySelectorAll('.slider-dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+  }
+
+  document.getElementById('testiPrev').addEventListener('click', () => goTo(currentSlide - 1));
+  document.getElementById('testiNext').addEventListener('click', () => goTo(currentSlide + 1));
+  buildDots();
+  window.addEventListener('resize', () => { buildDots(); goTo(0); });
+
+  // Auto-slide
+  setInterval(() => goTo(currentSlide + 1), 5000);
+
+  // ===== BOOKING FORM VALIDATION =====
+  document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    let valid = true;
+    const name = document.getElementById('b-name');
+    const phone = document.getElementById('b-phone');
+    const email = document.getElementById('b-email');
+    const area = document.getElementById('b-area');
+    const date = document.getElementById('b-date');
+    const time = document.getElementById('b-time');
+    const test = document.getElementById('b-test');
+
+    const setErr = (id, cond) => { document.getElementById(id).classList.toggle('error', cond); if (cond) valid = false; };
+    setErr('fg-name', name.value.trim().length < 2);
+    setErr('fg-phone', !/^[6-9]\d{9}$/.test(phone.value.replace(/\s+/g, '')));
+    setErr('fg-email', email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value));
+    setErr('fg-area', area.value.trim().length < 2);
+    setErr('fg-date', !date.value);
+    setErr('fg-time', !time.value);
+    setErr('fg-test', !test.value);
+
+    if (valid) {
+      document.getElementById('bookingForm').style.display = 'none';
+      document.getElementById('bookingSuccess').style.display = 'block';
+    }
+  });
+
+  // ===== CONTACT FORM =====
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('button[type=submit]');
+    btn.innerHTML = '<i class="fas fa-check-circle"></i> Message Sent!';
+    btn.style.background = '#25D366';
+    btn.disabled = true;
+    setTimeout(() => { btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message'; btn.style.background = ''; btn.disabled = false; this.reset(); }, 3500);
+  });
+
+  // ===== SET MIN DATE FOR BOOKING =====
+  const dateInput = document.getElementById('b-date');
+  if (dateInput) {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, '0');
+    dateInput.min = `${yyyy}-${mm}-${dd}`;
+  }
+</script>
+
+</body>
+</html>
