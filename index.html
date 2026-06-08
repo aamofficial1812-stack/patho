@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HealthFirst Diagnostics – Professional home sample collection in Mumbai, Thane & Mumbra. NABL accredited lab partners. Book now." />
+  <title>HealthFirst Diagnostics | Accurate Tests. Trusted Results.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #00B7A8;
+      --primary-dark: #009688;
+      --secondary: #0B2A4A;
+      --accent: #14D9C4;
+      --accent-light: #e0faf8;
+      --orange: #FF6B35;
+      --bg: #F4FBFB;
+      --white: #FFFFFF;
+      --text-dark: #1a2e44;
+      --text-mid: #4a5568;
+      --text-light: #718096;
+      --border: #d9eeed;
+      --radius: 14px;
+      --shadow: 0 4px 24px rgba(0,183,168,0.10);
+      --shadow-hover: 0 12px 40px rgba(0,183,168,0.22);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text-dark);overflow-x:hidden;}
+    a{text-decoration:none;color:inherit;}
+    img{max-width:100%;display:block;}
+    ul{list-style:none;}
+    button{cursor:pointer;font-family:'Poppins',sans-serif;border:none;outline:none;}
+    input,select,textarea{font-family:'Poppins',sans-serif;outline:none;}
+    .container{max-width:1200px;margin:0 auto;padding:0 20px;}
+    .section-title{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;color:var(--secondary);text-align:center;margin-bottom:6px;font-family:'Nunito',sans-serif;}
+    .section-sub{text-align:center;color:var(--text-mid);font-size:0.92rem;margin-bottom:40px;}
+    .divider{width:50px;height:4px;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:2px;margin:8px auto 14px;}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;border-radius:50px;font-size:0.92rem;font-weight:700;transition:all 0.3s;box-shadow:0 4px 18px rgba(0,183,168,0.3);}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,183,168,0.45);}
+    .btn-wa{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:#25D366;color:#fff;border-radius:50px;font-size:0.92rem;font-weight:700;transition:all 0.3s;box-shadow:0 4px 18px rgba(37,211,102,0.3);}
+    .btn-wa:hover{background:#1fba59;transform:translateY(-2px);}
+    .fade-in{opacity:0;transform:translateY(25px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .fade-in.visible{opacity:1;transform:translateY(0);}
+    .fade-left{opacity:0;transform:translateX(-30px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .fade-left.visible{opacity:1;transform:translateX(0);}
+    .fade-right{opacity:0;transform:translateX(30px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .fade-right.visible{opacity:1;transform:translateX(0);}
+
+    /* ===== HEADER ===== */
+    #header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);box-shadow:0 2px 16px rgba(0,0,0,0.07);transition:all 0.3s;}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;}
+    .logo{display:flex;align-items:center;gap:10px;}
+    .logo-img{width:40px;height:40px;background:linear-gradient(135deg,var(--primary),var(--accent));border-radius:11px;display:flex;align-items:center;justify-content:center;}
+    .logo-img i{color:#fff;font-size:1.1rem;}
+    .logo-text h1{font-size:1rem;font-weight:900;color:var(--secondary);line-height:1.15;font-family:'Nunito',sans-serif;}
+    .logo-text span{font-size:0.68rem;color:var(--primary);font-weight:600;}
+    .nav-links{display:flex;align-items:center;gap:2px;}
+    .nav-links a{padding:6px 10px;border-radius:8px;font-size:0.82rem;font-weight:600;color:var(--text-dark);transition:all 0.2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--primary);background:var(--accent-light);}
+    .nav-right{display:flex;align-items:center;gap:10px;}
+    .nav-phone{display:flex;align-items:center;gap:6px;font-size:0.82rem;font-weight:700;color:var(--secondary);}
+    .nav-phone i{color:var(--primary);}
+    .nav-wa-btn{display:flex;align-items:center;gap:6px;padding:9px 16px;background:#25D366;color:#fff;border-radius:50px;font-size:0.8rem;font-weight:700;transition:all 0.3s;}
+    .nav-wa-btn:hover{background:#1fba59;}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px;}
+    .hamburger span{width:24px;height:2.5px;background:var(--secondary);border-radius:2px;transition:all 0.3s;}
+    .mobile-menu{display:none;position:absolute;top:68px;left:0;width:100%;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,0.1);padding:16px;flex-direction:column;gap:4px;z-index:999;}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{padding:11px 16px;border-radius:10px;font-weight:600;color:var(--text-dark);transition:all 0.2s;font-size:0.9rem;}
+    .mobile-menu a:hover{background:var(--accent-light);color:var(--primary);}
+
+    /* ===== HERO ===== */
+    #hero{padding:80px 0 0;background:linear-gradient(135deg,#f0fffe 0%,#e4f9f8 50%,#f8fcfc 100%);overflow:hidden;position:relative;}
+    #hero::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(0,183,168,0.1) 0%,transparent 70%);border-radius:50%;pointer-events:none;}
+    .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding-bottom:0;}
+    .hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--accent-light);color:var(--primary);padding:5px 14px;border-radius:50px;font-size:0.76rem;font-weight:700;margin-bottom:16px;border:1px solid rgba(0,183,168,0.25);}
+    .hero-title{font-size:clamp(1.9rem,4vw,3rem);font-weight:900;line-height:1.1;color:var(--secondary);margin-bottom:14px;font-family:'Nunito',sans-serif;}
+    .hero-title span{color:var(--primary);}
+    .hero-desc{font-size:0.97rem;color:var(--text-mid);line-height:1.7;margin-bottom:22px;max-width:460px;}
+    .hero-feats{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;}
+    .hero-feat{display:flex;align-items:center;gap:7px;background:#fff;padding:7px 14px;border-radius:50px;font-size:0.78rem;font-weight:700;color:var(--secondary);box-shadow:0 2px 10px rgba(0,183,168,0.08);border:1px solid var(--border);}
+    .hero-feat i{color:var(--primary);}
+    .hero-btns{display:flex;flex-wrap:wrap;gap:12px;}
+    .hero-img-wrap{position:relative;}
+    .hero-img-card{border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,183,168,0.18);}
+    .hero-img-card img{width:100%;height:420px;object-fit:cover;}
+    .hero-badge{position:absolute;bottom:20px;left:-16px;background:#fff;border-radius:14px;padding:12px 18px;box-shadow:0 8px 28px rgba(0,0,0,0.12);display:flex;align-items:center;gap:10px;}
+    .hero-badge-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--primary),var(--accent));border-radius:11px;display:flex;align-items:center;justify-content:center;}
+    .hero-badge-icon i{color:#fff;font-size:1rem;}
+    .hero-badge-text strong{display:block;font-size:1rem;font-weight:900;color:var(--secondary);font-family:'Nunito',sans-serif;}
+    .hero-badge-text span{font-size:0.68rem;color:var(--text-light);}
+    .hero-badge2{position:absolute;top:20px;right:-16px;background:linear-gradient(135deg,var(--primary),var(--accent));border-radius:13px;padding:10px 16px;box-shadow:0 8px 22px rgba(0,183,168,0.35);color:#fff;text-align:center;}
+    .hero-badge2 strong{display:block;font-size:1.3rem;font-weight:900;font-family:'Nunito',sans-serif;}
+    .hero-badge2 span{font-size:0.66rem;opacity:0.9;}
+
+    /* ===== QUICK BOOKING STRIP ===== */
+    #quick-book{background:var(--secondary);padding:28px 0;}
+    .qb-inner{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;}
+    .qb-left h3{font-size:1.3rem;font-weight:800;color:#fff;font-family:'Nunito',sans-serif;margin-bottom:4px;}
+    .qb-left p{color:rgba(255,255,255,0.7);font-size:0.85rem;}
+    .qb-right{display:flex;gap:12px;align-items:center;}
+
+    /* ===== BOOKING FORM (MAIN) ===== */
+    #booking{padding:60px 0;background:#fff;}
+    .booking-wrap{display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:start;}
+    .booking-form-box{background:var(--bg);border-radius:20px;padding:36px;border:1.5px solid var(--border);}
+    .booking-form-box h2{font-size:1.5rem;font-weight:900;color:var(--secondary);margin-bottom:4px;font-family:'Nunito',sans-serif;}
+    .booking-form-box>p{color:var(--text-light);font-size:0.85rem;margin-bottom:24px;}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+    .form-group{display:flex;flex-direction:column;gap:5px;margin-bottom:14px;}
+    .form-group label{font-size:0.78rem;font-weight:700;color:var(--secondary);}
+    .form-group input,.form-group select,.form-group textarea{padding:11px 14px;border:1.5px solid var(--border);border-radius:10px;font-size:0.88rem;color:var(--text-dark);background:#fff;transition:border-color 0.2s;}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--primary);}
+    .form-group.error input,.form-group.error select{border-color:#e53e3e;}
+    .form-group .err-msg{font-size:0.72rem;color:#e53e3e;display:none;}
+    .form-group.error .err-msg{display:block;}
+    .submit-btn{width:100%;padding:14px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;font-size:1rem;font-weight:800;font-family:'Nunito',sans-serif;display:flex;align-items:center;justify-content:center;gap:10px;transition:all 0.3s;box-shadow:0 4px 18px rgba(0,183,168,0.3);}
+    .submit-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,183,168,0.45);}
+    .booking-success{display:none;text-align:center;padding:40px 20px;}
+    .booking-success i{font-size:3rem;color:var(--primary);margin-bottom:14px;}
+    .booking-success h3{font-size:1.3rem;font-weight:800;color:var(--secondary);margin-bottom:8px;font-family:'Nunito',sans-serif;}
+    .booking-success p{color:var(--text-mid);font-size:0.9rem;}
+    .booking-info-box{display:flex;flex-direction:column;gap:16px;}
+    .booking-info-card{background:var(--bg);border-radius:14px;padding:20px;border:1.5px solid var(--border);display:flex;align-items:center;gap:14px;}
+    .bi-icon{width:48px;height:48px;background:var(--accent-light);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .bi-icon i{color:var(--primary);font-size:1.2rem;}
+    .bi-text strong{display:block;font-size:0.9rem;font-weight:700;color:var(--secondary);margin-bottom:2px;}
+    .bi-text span{font-size:0.8rem;color:var(--text-mid);}
+    .booking-img{border-radius:14px;overflow:hidden;height:200px;}
+    .booking-img img{width:100%;height:100%;object-fit:cover;}
+    .wa-booking-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:13px;border-radius:12px;background:#25D366;color:#fff;font-size:0.92rem;font-weight:700;font-family:'Nunito',sans-serif;transition:all 0.3s;margin-top:4px;}
+    .wa-booking-btn:hover{background:#1fba59;transform:translateY(-1px);}
+
+    /* ===== SERVICES ===== */
+    #services{padding:70px 0;background:var(--bg);}
+    .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+    .service-card{background:#fff;border-radius:var(--radius);padding:24px 18px;text-align:center;border:1.5px solid var(--border);transition:all 0.3s;cursor:pointer;}
+    .service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover);border-color:var(--primary);}
+    .svc-icon{width:60px;height:60px;background:var(--accent-light);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;transition:all 0.3s;}
+    .service-card:hover .svc-icon{background:linear-gradient(135deg,var(--primary),var(--accent));}
+    .svc-icon i{font-size:1.4rem;color:var(--primary);transition:all 0.3s;}
+    .service-card:hover .svc-icon i{color:#fff;}
+    .service-card h3{font-size:0.87rem;font-weight:700;color:var(--secondary);}
+
+    /* ===== TESTS ===== */
+    #tests{padding:70px 0;background:#fff;}
+    .tests-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+    .test-card{background:var(--bg);border-radius:var(--radius);padding:22px;border:1.5px solid var(--border);transition:all 0.35s;position:relative;overflow:hidden;}
+    .test-card::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent));transform:scaleX(0);transition:transform 0.3s;}
+    .test-card:hover::after{transform:scaleX(1);}
+    .test-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-hover);background:#fff;}
+    .disc-badge{position:absolute;top:14px;right:14px;background:linear-gradient(135deg,#ff6b35,#ff8c42);color:#fff;padding:3px 9px;border-radius:50px;font-size:0.68rem;font-weight:800;}
+    .test-icon{width:48px;height:48px;background:var(--accent-light);border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+    .test-icon i{font-size:1.2rem;color:var(--primary);}
+    .test-card h3{font-size:0.92rem;font-weight:800;color:var(--secondary);margin-bottom:5px;font-family:'Nunito',sans-serif;}
+    .test-card p{font-size:0.77rem;color:var(--text-light);line-height:1.5;margin-bottom:12px;}
+    .test-pricing{display:flex;align-items:baseline;gap:8px;margin-bottom:14px;}
+    .test-price{font-size:1.3rem;font-weight:900;color:var(--primary);font-family:'Nunito',sans-serif;}
+    .test-orig{font-size:0.82rem;color:var(--text-light);text-decoration:line-through;}
+    .btn-book{display:block;width:100%;text-align:center;padding:9px;border-radius:9px;background:var(--accent-light);color:var(--primary);font-size:0.82rem;font-weight:800;transition:all 0.3s;border:1.5px solid transparent;}
+    .btn-book:hover{background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;}
+
+    /* ===== WHY US ===== */
+    #why{padding:70px 0;background:linear-gradient(135deg,var(--secondary) 0%,#0d3560 100%);position:relative;overflow:hidden;}
+    #why .section-title{color:#fff;}
+    #why .section-sub{color:rgba(255,255,255,0.7);}
+    #why .divider{background:linear-gradient(90deg,var(--accent),var(--primary));}
+    .why-inner{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
+    .why-list{display:flex;flex-direction:column;gap:12px;margin-bottom:24px;}
+    .why-list li{display:flex;align-items:center;gap:12px;color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:500;}
+    .why-list li i{width:28px;height:28px;background:rgba(0,183,168,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:0.75rem;flex-shrink:0;}
+    .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+    .stat-card{background:rgba(255,255,255,0.07);backdrop-filter:blur(10px);border-radius:var(--radius);padding:26px;border:1px solid rgba(255,255,255,0.1);text-align:center;transition:all 0.3s;}
+    .stat-card:hover{background:rgba(0,183,168,0.15);border-color:rgba(0,183,168,0.4);transform:translateY(-4px);}
+    .stat-num{font-size:2.2rem;font-weight:900;color:var(--accent);line-height:1;margin-bottom:5px;font-family:'Nunito',sans-serif;}
+    .stat-label{font-size:0.8rem;color:rgba(255,255,255,0.7);font-weight:500;}
+
+    /* ===== PARTNERS ===== */
+    #partners{padding:70px 0;background:var(--bg);}
+    .partners-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+    .partner-card{background:#fff;border-radius:var(--radius);padding:36px 26px;text-align:center;border:2px solid var(--border);transition:all 0.35s;position:relative;overflow:hidden;}
+    .partner-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--primary),var(--accent));transform:scaleX(0);transition:transform 0.3s;}
+    .partner-card:hover::before{transform:scaleX(1);}
+    .partner-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-hover);}
+    .partner-logo{font-size:1.5rem;font-weight:900;margin-bottom:10px;}
+    .partner-card p{font-size:0.8rem;color:var(--text-light);margin-bottom:12px;}
+    .partner-badge{display:inline-block;padding:4px 12px;background:var(--accent-light);color:var(--primary);border-radius:50px;font-size:0.72rem;font-weight:700;}
+
+    /* ===== HOW IT WORKS ===== */
+    #how{padding:70px 0;background:#fff;}
+    .how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative;}
+    .how-grid::before{content:'';position:absolute;top:46px;left:12%;right:12%;height:2px;background:linear-gradient(90deg,var(--primary),var(--accent));z-index:0;}
+    .how-card{text-align:center;position:relative;z-index:1;}
+    .how-step{width:76px;height:76px;background:linear-gradient(135deg,var(--primary),var(--accent));border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 18px;box-shadow:0 8px 22px rgba(0,183,168,0.28);transition:all 0.3s;}
+    .how-card:hover .how-step{transform:scale(1.1);}
+    .how-step i{font-size:1.3rem;color:#fff;}
+    .how-step-num{font-size:0.6rem;color:rgba(255,255,255,0.8);font-weight:700;margin-top:2px;}
+    .how-card h3{font-size:0.93rem;font-weight:800;color:var(--secondary);margin-bottom:7px;font-family:'Nunito',sans-serif;}
+    .how-card p{font-size:0.79rem;color:var(--text-mid);line-height:1.6;}
+
+    /* ===== TESTIMONIALS ===== */
+    #testimonials{padding:70px 0;background:var(--bg);}
+    .testi-slider{position:relative;overflow:hidden;}
+    .testi-track{display:flex;transition:transform 0.5s ease;}
+    .testi-slide{min-width:calc(33.33% - 14px);margin:0 7px;}
+    .testi-card{background:#fff;border-radius:var(--radius);padding:26px;border:1.5px solid var(--border);height:100%;transition:all 0.3s;}
+    .testi-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-4px);}
+    .testi-top{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+    .testi-avatar{width:48px;height:48px;border-radius:50%;object-fit:cover;flex-shrink:0;border:3px solid var(--accent-light);}
+    .testi-name{font-weight:800;font-size:0.9rem;color:var(--secondary);font-family:'Nunito',sans-serif;}
+    .testi-stars{display:flex;gap:2px;margin-top:2px;}
+    .testi-stars i{color:#f6ad55;font-size:0.72rem;}
+    .testi-quote{font-size:1.8rem;color:var(--accent);line-height:1;margin-bottom:6px;}
+    .testi-text{font-size:0.84rem;color:var(--text-mid);line-height:1.7;font-style:italic;}
+    .slider-controls{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:30px;}
+    .slider-btn{width:42px;height:42px;border-radius:50%;background:#fff;border:2px solid var(--border);color:var(--secondary);display:flex;align-items:center;justify-content:center;transition:all 0.3s;cursor:pointer;}
+    .slider-btn:hover{background:var(--primary);color:#fff;border-color:var(--primary);}
+    .slider-dots{display:flex;gap:7px;}
+    .slider-dot{width:9px;height:9px;border-radius:50%;background:var(--border);cursor:pointer;transition:all 0.3s;}
+    .slider-dot.active{background:var(--primary);width:26px;border-radius:5px;}
+
+    /* ===== FAQ ===== */
+    #faq{padding:70px 0;background:#fff;}
+    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:940px;margin:0 auto;}
+    .faq-item{background:var(--bg);border-radius:var(--radius);border:1.5px solid var(--border);overflow:hidden;}
+    .faq-q{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;cursor:pointer;font-weight:700;font-size:0.86rem;color:var(--secondary);transition:all 0.2s;gap:10px;}
+    .faq-q:hover{color:var(--primary);}
+    .faq-q i{width:26px;height:26px;border-radius:50%;background:var(--accent-light);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:0.72rem;flex-shrink:0;transition:all 0.3s;}
+    .faq-item.open .faq-q i{background:var(--primary);color:#fff;transform:rotate(45deg);}
+    .faq-a{padding:0 20px;max-height:0;overflow:hidden;transition:all 0.35s ease;font-size:0.83rem;color:var(--text-mid);line-height:1.7;}
+    .faq-item.open .faq-a{max-height:200px;padding:0 20px 16px;}
+
+    /* ===== CONTACT ===== */
+    #contact{padding:70px 0;background:var(--bg);}
+    .contact-inner{display:grid;grid-template-columns:1fr 1.2fr;gap:50px;}
+    .contact-info h3{font-size:1.4rem;font-weight:800;color:var(--secondary);margin-bottom:14px;font-family:'Nunito',sans-serif;}
+    .contact-info p{color:var(--text-mid);line-height:1.7;margin-bottom:28px;font-size:0.9rem;}
+    .contact-items{display:flex;flex-direction:column;gap:16px;margin-bottom:28px;}
+    .contact-item{display:flex;align-items:center;gap:14px;}
+    .c-icon{width:46px;height:46px;background:var(--accent-light);border-radius:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .c-icon i{color:var(--primary);font-size:1rem;}
+    .contact-item h4{font-size:0.76rem;color:var(--text-light);margin-bottom:1px;}
+    .contact-item p{color:var(--secondary);font-weight:700;font-size:0.88rem;margin:0;}
+    .map-ph{border-radius:14px;overflow:hidden;height:180px;background:linear-gradient(135deg,#e0f7fa,#b2ebf2);display:flex;align-items:center;justify-content:center;border:2px dashed rgba(0,183,168,0.3);}
+    .map-ph p{color:var(--primary);font-weight:700;font-size:0.88rem;}
+    .contact-form-box{background:#fff;border-radius:20px;padding:36px;border:1.5px solid var(--border);}
+    .contact-form-box h3{font-size:1.2rem;font-weight:800;color:var(--secondary);margin-bottom:22px;font-family:'Nunito',sans-serif;}
+
+    /* ===== WA FLOAT ===== */
+    .wa-float{position:fixed;bottom:26px;right:26px;z-index:9999;}
+    .wa-float a{display:flex;align-items:center;gap:9px;background:#25D366;color:#fff;padding:13px 20px;border-radius:50px;font-weight:800;font-size:0.86rem;box-shadow:0 6px 24px rgba(37,211,102,0.45);transition:all 0.3s;animation:waPulse 2s infinite;font-family:'Nunito',sans-serif;}
+    .wa-float a:hover{background:#1fba59;transform:scale(1.05);}
+    .wa-float i{font-size:1.2rem;}
+    @keyframes waPulse{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,0.45);}50%{box-shadow:0 6px 34px rgba(37,211,102,0.7);}}
+
+    /* ===== FOOTER ===== */
+    footer{background:var(--secondary);color:rgba(255,255,255,0.8);padding:55px 0 0;}
+    .footer-inner{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;margin-bottom:40px;}
+    .footer-brand .logo{margin-bottom:14px;}
+    .footer-brand .logo-text h1{color:#fff;}
+    .footer-brand p{font-size:0.82rem;line-height:1.7;color:rgba(255,255,255,0.55);margin-bottom:18px;}
+    .social-links{display:flex;gap:9px;}
+    .social-links a{width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.7);transition:all 0.3s;}
+    .social-links a:hover{background:var(--primary);color:#fff;transform:translateY(-2px);}
+    .footer-col h4{font-size:0.9rem;font-weight:800;color:#fff;margin-bottom:16px;font-family:'Nunito',sans-serif;}
+    .footer-col ul li{margin-bottom:9px;}
+    .footer-col ul li a{font-size:0.82rem;color:rgba(255,255,255,0.55);transition:color 0.2s;}
+    .footer-col ul li a:hover{color:var(--accent);}
+    .f-contact-item{display:flex;align-items:flex-start;gap:9px;margin-bottom:12px;font-size:0.82rem;}
+    .f-contact-item i{color:var(--accent);margin-top:2px;flex-shrink:0;}
+    .f-contact-item span{color:rgba(255,255,255,0.55);line-height:1.5;}
+    .footer-wa{display:inline-flex;align-items:center;gap:7px;background:#25D366;color:#fff;padding:9px 16px;border-radius:9px;font-size:0.8rem;font-weight:700;transition:all 0.3s;margin-top:6px;font-family:'Nunito',sans-serif;}
+    .footer-wa:hover{background:#1fba59;}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding:18px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+    .footer-bottom p{font-size:0.79rem;color:rgba(255,255,255,0.35);}
+    .footer-bottom-links{display:flex;gap:18px;}
+    .footer-bottom-links a{font-size:0.79rem;color:rgba(255,255,255,0.35);transition:color 0.2s;}
+    .footer-bottom-links a:hover{color:var(--accent);}
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:1024px){
+      .services-grid{grid-template-columns:repeat(4,1fr);}
+      .tests-grid{grid-template-columns:repeat(2,1fr);}
+      .footer-inner{grid-template-columns:1fr 1fr;}
+    }
+    @media(max-width:900px){
+      .hero-inner{grid-template-columns:1fr;gap:30px;}
+      .hero-img-wrap{order:-1;}
+      .hero-img-card img{height:300px;}
+      .hero-badge{left:0;}
+      .why-inner{grid-template-columns:1fr;}
+      .booking-wrap{grid-template-columns:1fr;}
+      .contact-inner{grid-template-columns:1fr;}
+      .faq-grid{grid-template-columns:1fr;}
+      .how-grid::before{display:none;}
+      .how-grid{grid-template-columns:repeat(2,1fr);}
+      .partners-grid{grid-template-columns:1fr;}
+      .qb-inner{grid-template-columns:1fr;}
+      .qb-right{flex-wrap:wrap;}
+    }
+    @media(max-width:768px){
+      .nav-links,.nav-right{display:none;}
+      .hamburger{display:flex;}
+      .hero-btns{flex-direction:column;}
+      .btn-primary,.btn-wa{width:100%;justify-content:center;}
+      .services-grid{grid-template-columns:repeat(2,1fr);}
+      .stats-grid{grid-template-columns:1fr 1fr;}
+      .form-row{grid-template-columns:1fr;}
+      .testi-slide{min-width:calc(100% - 14px);}
+      .how-grid{grid-template-columns:repeat(2,1fr);}
+      .footer-inner{grid-template-columns:1fr;}
+    }
+    @media(max-width:480px){
+      .tests-grid{grid-template-columns:1fr;}
+      .how-grid{grid-template-columns:1fr;}
+      .hero-badge2{display:none;}
+      .wa-float a span{display:none;}
+      .wa-float a{border-radius:50%;width:54px;height:54px;justify-content:center;padding:0;}
+      .services-grid{grid-template-columns:repeat(2,1fr);}
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="#hero" class="logo">
+        <div class="logo-img"><i class="fas fa-flask"></i></div>
+        <div class="logo-text"><h1>HealthFirst<br>Diagnostics</h1><span>Tests You Can Trust</span></div>
+      </a>
+      <div class="nav-links">
+        <a href="#hero" class="active">Home</a>
+        <a href="#booking">Book Now</a>
+        <a href="#tests">Tests</a>
+        <a href="#why">Why Us</a>
+        <a href="#partners">Our Labs</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-right">
+        <div class="nav-phone"><i class="fas fa-phone-alt"></i> +91 92232 13428</div>
+        <a href="https://wa.me/919223213428?text=Hi%2C%20I%20want%20to%20book%20a%20home%20sample%20collection" target="_blank" class="nav-wa-btn"><i class="fab fa-whatsapp"></i> Book Now</a>
+      </div>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#hero">Home</a>
+      <a href="#booking">Book Now</a>
+      <a href="#tests">Tests &amp; Packages</a>
+      <a href="#why">Why Us</a>
+      <a href="#partners">Our Labs</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a href="https://wa.me/919223213428" target="_blank" class="nav-wa-btn" style="margin-top:8px;justify-content:center;border-radius:50px;"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="fade-left">
+        <div class="hero-tag"><i class="fas fa-certificate"></i> Trusted by 1000+ Families in Mumbai</div>
+        <h2 class="hero-title">Accurate Tests.<br><span>Trusted Results.</span></h2>
+        <p class="hero-desc">Professional home sample collection by certified phlebotomists. Fast reporting from NABL-accredited laboratory partners — right at your doorstep in Mumbai, Thane &amp; Mumbra.</p>
+        <div class="hero-feats">
+          <div class="hero-feat"><i class="fas fa-home"></i> Home Collection</div>
+          <div class="hero-feat"><i class="fas fa-clock"></i> 24–48 Hr Reports</div>
+          <div class="hero-feat"><i class="fas fa-user-nurse"></i> Certified Staff</div>
+          <div class="hero-feat"><i class="fas fa-shield-alt"></i> NABL Labs</div>
+        </div>
+        <div class="hero-btns">
+          <a href="#booking" class="btn-primary"><i class="fas fa-calendar-check"></i> Book Home Collection</a>
+          <a href="https://wa.me/919223213428?text=Hi%2C%20I%20want%20to%20book%20a%20test" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+        </div>
+      </div>
+      <div class="hero-img-wrap fade-right">
+        <div class="hero-img-card">
+          <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=700&q=80" alt="Phlebotomist collecting blood sample at home" loading="lazy" />
+        </div>
+        <div class="hero-badge">
+          <div class="hero-badge-icon"><i class="fas fa-user-nurse"></i></div>
+          <div class="hero-badge-text"><strong>10+</strong><span>Expert Phlebotomists</span></div>
+        </div>
+        <div class="hero-badge2"><strong>24–48 Hrs</strong><span>Report Delivery</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK BOOK STRIP -->
+<div id="quick-book">
+  <div class="container">
+    <div class="qb-inner">
+      <div class="qb-left">
+        <h3>📍 Serving Mumbai · Thane · Mumbra</h3>
+        <p>Call or WhatsApp us to book your home sample collection today — slots fill up fast!</p>
+      </div>
+      <div class="qb-right">
+        <a href="tel:+919223213428" class="btn-primary"><i class="fas fa-phone-alt"></i> Call +91 92232 13428</a>
+        <a href="https://wa.me/919223213428?text=Hi%2C%20I%20want%20to%20book%20a%20home%20sample%20collection" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOOKING FORM -->
+<section id="booking">
+  <div class="container">
+    <h2 class="section-title fade-in">Book Home Sample Collection</h2>
+    <div class="divider"></div>
+    <p class="section-sub fade-in">Fill the form below — we'll confirm your slot within minutes via WhatsApp.</p>
+    <div class="booking-wrap">
+      <!-- FORM -->
+      <div class="booking-form-box fade-left">
+        <h2>Book Your Slot</h2>
+        <p>Our phlebotomist will arrive at your chosen time with sterile equipment.</p>
+        <div id="bookingSuccess" class="booking-success">
+          <i class="fas fa-check-circle"></i>
+          <h3>Booking Confirmed!</h3>
+          <p>Your request has been sent to our team on WhatsApp. We'll confirm your appointment shortly.<br><br>For immediate help call: <strong>+91 92232 13428</strong></p>
+        </div>
+        <form id="bookingForm" novalidate>
+          <div class="form-row">
+            <div class="form-group" id="fg-name">
+              <label for="b-name">Full Name *</label>
+              <input type="text" id="b-name" placeholder="Ramesh Sharma" />
+              <span class="err-msg">Please enter your full name.</span>
+            </div>
+            <div class="form-group" id="fg-phone">
+              <label for="b-phone">Mobile Number *</label>
+              <input type="tel" id="b-phone" placeholder="9876543210" />
+              <span class="err-msg">Enter a valid 10-digit mobile number.</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group" id="fg-area">
+              <label for="b-area">Area / Location *</label>
+              <input type="text" id="b-area" placeholder="Andheri, Mumbai" />
+              <span class="err-msg">Please enter your area.</span>
+            </div>
+            <div class="form-group" id="fg-email">
+              <label for="b-email">Email (for report delivery)</label>
+              <input type="email" id="b-email" placeholder="ramesh@email.com" />
+              <span class="err-msg">Enter a valid email address.</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group" id="fg-date">
+              <label for="b-date">Preferred Date *</label>
+              <input type="date" id="b-date" />
+              <span class="err-msg">Please select a date.</span>
+            </div>
+            <div class="form-group" id="fg-time">
+              <label for="b-time">Preferred Time Slot *</label>
+              <select id="b-time">
+                <option value="">Select Time Slot</option>
+                <option>6:00 AM – 8:00 AM</option>
+                <option>8:00 AM – 10:00 AM</option>
+                <option>10:00 AM – 12:00 PM</option>
+                <option>12:00 PM – 2:00 PM</option>
+                <option>2:00 PM – 4:00 PM</option>
+                <option>4:00 PM – 6:00 PM</option>
+              </select>
+              <span class="err-msg">Please select a time slot.</span>
+            </div>
+          </div>
+          <div class="form-group" id="fg-test">
+            <label for="b-test">Select Test / Package *</label>
+            <select id="b-test">
+              <option value="">Choose a Test or Package</option>
+              <option>Full Body Checkup – ₹1499</option>
+              <option>Diabetes Profile – ₹699</option>
+              <option>Thyroid Profile – ₹899</option>
+              <option>Women's Health Package – ₹1299</option>
+              <option>Senior Citizen Package – ₹1999</option>
+              <option>CBC Test – ₹299</option>
+              <option>Vitamin D Test – ₹799</option>
+              <option>Liver Function Test – ₹599</option>
+              <option>Other / I'll tell later</option>
+            </select>
+            <span class="err-msg">Please select a test.</span>
+          </div>
+          <button type="submit" class="submit-btn"><i class="fab fa-whatsapp"></i> Confirm Booking on WhatsApp</button>
+        </form>
+      </div>
+      <!-- INFO SIDE -->
+      <div class="booking-info-box fade-right">
+        <div class="booking-img">
+          <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&q=80" alt="Healthcare professional" loading="lazy" />
+        </div>
+        <div class="booking-info-card">
+          <div class="bi-icon"><i class="fas fa-shield-alt"></i></div>
+          <div class="bi-text"><strong>Safe &amp; Hygienic Collection</strong><span>All equipment is sterile and single-use. We follow strict protocols.</span></div>
+        </div>
+        <div class="booking-info-card">
+          <div class="bi-icon"><i class="fas fa-clock"></i></div>
+          <div class="bi-text"><strong>Reports in 24–48 Hours</strong><span>Delivered directly to your WhatsApp &amp; email as a PDF.</span></div>
+        </div>
+        <div class="booking-info-card">
+          <div class="bi-icon"><i class="fas fa-tag"></i></div>
+          <div class="bi-text"><strong>Affordable &amp; Transparent</strong><span>No hidden charges. What you see is what you pay.</span></div>
+        </div>
+        <a href="https://wa.me/919223213428?text=Hi%2C%20I%20want%20to%20book%20a%20home%20sample%20collection" target="_blank" class="wa-booking-btn"><i class="fab fa-whatsapp"></i> Or Simply WhatsApp Us Directly</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <h2 class="section-title fade-in">Our Services</h2>
+    <div class="divider"></div>
+    <p class="section-sub fade-in">Everything you need, delivered to your doorstep.</p>
+    <div class="services-grid">
+      <div class="service-card fade-in"><div class="svc-icon"><i class="fas fa-home"></i></div><h3>Home Sample Collection</h3></div>
+      <div class="service-card fade-in"><div class="svc-icon"><i class="fas fa-tint"></i></div><h3>Blood Tests</h3></div>
+      <div class="service-card fade-in"><div class="svc-icon"><i class="fas fa-heartbeat"></i></div><h3>Full Body Checkups</h3></div>
+      <div class="service-card fade-in"><div class="svc-icon"><i class="fas fa-syringe"></i></div><h3>Diabetes Care</h3></div>
+      <div class="service-card fade-in"><div class="svc-icon"><i class="fas fa-dna"></i></div><h3>Thyroid Profile</h3></div>
+      <div class="service-card fade-in"><div class="svc-icon"><i class="fas fa-venus"></i></div><h3>Women's Health</h3></div>
+      <div class="service-card fade-in"><div class="svc-icon"><i class="fas fa-user-friends"></i></div><h3>Senior Citizen Packages</h3></div>
+      <div class="service-card fade-in"><div class="svc-icon"><i class="fas fa-file-medical-alt"></i></div><h3>Online Reports</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTS -->
+<section id="tests">
+  <div class="container">
+    <h2 class="section-title fade-in">Popular Tests &amp; Packages</h2>
+    <div class="divider"></div>
+    <p class="section-sub fade-in">Comprehensive health packages at unbeatable prices.</p>
+    <div class="tests-grid">
+      <div class="test-card fade-in">
+        <span class="disc-badge">42% OFF</span>
+        <div class="test-icon"><i class="fas fa-clipboard-list"></i></div>
+        <h3>Full Body Checkup</h3>
+        <p>Complete checkup covering 70+ parameters for overall health.</p>
+        <div class="test-pricing"><span class="test-price">₹1499</span><span class="test-orig">₹2599</span></div>
+        <a href="#booking" class="btn-book">Book Now</a>
+      </div>
+      <div class="test-card fade-in">
+        <span class="disc-badge">42% OFF</span>
+        <div class="test-icon"><i class="fas fa-tint"></i></div>
+        <h3>Diabetes Profile</h3>
+        <p>Monitor diabetes &amp; sugar levels — HbA1c, fasting glucose &amp; more.</p>
+        <div class="test-pricing"><span class="test-price">₹699</span><span class="test-orig">₹1200</span></div>
+        <a href="#booking" class="btn-book">Book Now</a>
+      </div>
+      <div class="test-card fade-in">
+        <span class="disc-badge">40% OFF</span>
+        <div class="test-icon"><i class="fas fa-dna"></i></div>
+        <h3>Thyroid Profile</h3>
+        <p>Complete T3, T4, TSH evaluation for better thyroid care.</p>
+        <div class="test-pricing"><span class="test-price">₹899</span><span class="test-orig">₹1500</span></div>
+        <a href="#booking" class="btn-book">Book Now</a>
+      </div>
+      <div class="test-card fade-in">
+        <span class="disc-badge">41% OFF</span>
+        <div class="test-icon"><i class="fas fa-venus"></i></div>
+        <h3>Women's Health Package</h3>
+        <p>Hormones, iron &amp; vitamin panel for women's wellness.</p>
+        <div class="test-pricing"><span class="test-price">₹1299</span><span class="test-orig">₹2200</span></div>
+        <a href="#booking" class="btn-book">Book Now</a>
+      </div>
+      <div class="test-card fade-in">
+        <span class="disc-badge">43% OFF</span>
+        <div class="test-icon"><i class="fas fa-user-friends"></i></div>
+        <h3>Senior Citizen Package</h3>
+        <p>Age-specific screening covering 90+ vital parameters.</p>
+        <div class="test-pricing"><span class="test-price">₹1999</span><span class="test-orig">₹3499</span></div>
+        <a href="#booking" class="btn-book">Book Now</a>
+      </div>
+      <div class="test-card fade-in">
+        <span class="disc-badge">40% OFF</span>
+        <div class="test-icon"><i class="fas fa-vial"></i></div>
+        <h3>CBC Test</h3>
+        <p>Complete Blood Count — baseline test for overall health.</p>
+        <div class="test-pricing"><span class="test-price">₹299</span><span class="test-orig">₹499</span></div>
+        <a href="#booking" class="btn-book">Book Now</a>
+      </div>
+      <div class="test-card fade-in">
+        <span class="disc-badge">47% OFF</span>
+        <div class="test-icon"><i class="fas fa-sun"></i></div>
+        <h3>Vitamin D Test</h3>
+        <p>Measure Vitamin D3 levels — critical for bone health &amp; immunity.</p>
+        <div class="test-pricing"><span class="test-price">₹799</span><span class="test-orig">₹1499</span></div>
+        <a href="#booking" class="btn-book">Book Now</a>
+      </div>
+      <div class="test-card fade-in">
+        <span class="disc-badge">40% OFF</span>
+        <div class="test-icon"><i class="fas fa-heartbeat"></i></div>
+        <h3>Liver Function Test</h3>
+        <p>SGOT, SGPT, bilirubin &amp; full LFT panel for liver health.</p>
+        <div class="test-pricing"><span class="test-price">₹599</span><span class="test-orig">₹999</span></div>
+        <a href="#booking" class="btn-book">Book Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section id="why">
+  <div class="container">
+    <h2 class="section-title fade-in">Why Choose HealthFirst?</h2>
+    <div class="divider fade-in"></div>
+    <p class="section-sub fade-in">Quality diagnostics at your doorstep — trusted by 1000+ families.</p>
+    <div class="why-inner">
+      <div class="fade-left">
+        <ul class="why-list">
+          <li><i class="fas fa-check"></i> Trained &amp; Verified Phlebotomists</li>
+          <li><i class="fas fa-check"></i> Safe &amp; Hygienic Sample Collection</li>
+          <li><i class="fas fa-check"></i> Reports from Top NABL Accredited Labs</li>
+          <li><i class="fas fa-check"></i> Timely Reports &amp; Easy Online Access</li>
+          <li><i class="fas fa-check"></i> 100% Customer Satisfaction</li>
+          <li><i class="fas fa-check"></i> Affordable &amp; Transparent Pricing</li>
+          <li><i class="fas fa-check"></i> Serving Mumbai, Thane &amp; Mumbra</li>
+        </ul>
+      </div>
+      <div class="fade-right">
+        <div class="stats-grid">
+          <div class="stat-card"><div class="stat-num" data-count="10">0</div><div class="stat-label">Certified Phlebotomists</div></div>
+          <div class="stat-card"><div class="stat-num" data-count="1000">0</div><div class="stat-label">Happy Families</div></div>
+          <div class="stat-card"><div class="stat-num" data-count="3">0</div><div class="stat-label">Trusted Lab Partners</div></div>
+          <div class="stat-card"><div class="stat-num" data-count="48">0</div><div class="stat-label">Hrs Report Delivery</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LAB PARTNERS -->
+<section id="partners">
+  <div class="container">
+    <h2 class="section-title fade-in">Our Lab Partners</h2>
+    <div class="divider"></div>
+    <p class="section-sub fade-in">Samples processed only at NABL-accredited, trusted laboratories.</p>
+    <div class="partners-grid">
+      <div class="partner-card fade-in">
+        <div class="partner-logo" style="color:#6d1ed4;">SUBURBAN<br><span style="font-size:0.8rem;color:#9b59b6;letter-spacing:3px;font-weight:600;">DIAGNOSTICS</span></div>
+        <p>NABL &amp; NABH accredited diagnostic chain across Mumbai with 50+ collection centers.</p>
+        <span class="partner-badge"><i class="fas fa-check-circle"></i> Verified Partner</span>
+      </div>
+      <div class="partner-card fade-in">
+        <div class="partner-logo" style="color:#1a73e8;">Metropolis<br><span style="font-size:0.78rem;color:#4a90d9;font-weight:500;">Healthcare</span></div>
+        <p>Pan-India pathology specialist with state-of-the-art labs and 4,000+ tests.</p>
+        <span class="partner-badge"><i class="fas fa-check-circle"></i> Verified Partner</span>
+      </div>
+      <div class="partner-card fade-in">
+        <div class="partner-logo" style="color:#e63946;">Thyro<span style="color:#f4a261;">care</span></div>
+        <p>India's largest preventive healthcare &amp; wellness company — tests you can trust.</p>
+        <span class="partner-badge"><i class="fas fa-check-circle"></i> Verified Partner</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="container">
+    <h2 class="section-title fade-in">How It Works?</h2>
+    <div class="divider"></div>
+    <p class="section-sub fade-in">Simple 4-step process from booking to receiving your reports.</p>
+    <div class="how-grid">
+      <div class="how-card fade-in">
+        <div class="how-step"><i class="fas fa-calendar-check"></i><span class="how-step-num">STEP 1</span></div>
+        <h3>Book Your Slot</h3>
+        <p>Fill the form above or WhatsApp us to choose your preferred date and time.</p>
+      </div>
+      <div class="how-card fade-in" style="transition-delay:0.1s">
+        <div class="how-step"><i class="fas fa-user-nurse"></i><span class="how-step-num">STEP 2</span></div>
+        <h3>We Collect Sample</h3>
+        <p>Our certified phlebotomist visits your home with all sterile equipment.</p>
+      </div>
+      <div class="how-card fade-in" style="transition-delay:0.2s">
+        <div class="how-step"><i class="fas fa-shipping-fast"></i><span class="how-step-num">STEP 3</span></div>
+        <h3>Sample Sent to Lab</h3>
+        <p>Your sample is analysed in NABL-accredited partner laboratories.</p>
+      </div>
+      <div class="how-card fade-in" style="transition-delay:0.3s">
+        <div class="how-step"><i class="fas fa-file-medical"></i><span class="how-step-num">STEP 4</span></div>
+        <h3>Receive Reports Online</h3>
+        <p>Reports delivered to your WhatsApp or email within 24–48 hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <h2 class="section-title fade-in">Trusted by Thousands</h2>
+    <div class="divider"></div>
+    <p class="section-sub fade-in">What our happy customers say about us.</p>
+    <div class="testi-slider fade-in">
+      <div class="testi-track" id="testiTrack">
+        <div class="testi-slide"><div class="testi-card"><div class="testi-quote">"</div><div class="testi-top"><img class="testi-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ramesh Kumar"/><div><div class="testi-name">Ramesh Kumar</div><div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div></div><p class="testi-text">Very professional and on-time service. Reports were delivered before expected. The phlebotomist was courteous and the collection process was completely painless. Highly recommended!</p></div></div>
+        <div class="testi-slide"><div class="testi-card"><div class="testi-quote">"</div><div class="testi-top"><img class="testi-avatar" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Sharma"/><div><div class="testi-name">Priya Sharma</div><div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div></div><p class="testi-text">Good experience overall. The phlebotomist was polite and the collection was done smoothly. Got my thyroid reports on WhatsApp within 24 hours. Will definitely use again!</p></div></div>
+        <div class="testi-slide"><div class="testi-card"><div class="testi-quote">"</div><div class="testi-top"><img class="testi-avatar" src="https://randomuser.me/api/portraits/men/56.jpg" alt="Ankit Mehta"/><div><div class="testi-name">Ankit Mehta</div><div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div></div></div><p class="testi-text">Affordable pricing and reliable reports. Best home collection service in Thane. Booked at 8 PM and they came the next morning at 7 AM sharp. Great service!</p></div></div>
+        <div class="testi-slide"><div class="testi-card"><div class="testi-quote">"</div><div class="testi-top"><img class="testi-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sunita Nair"/><div><div class="testi-name">Sunita Nair</div><div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div></div><p class="testi-text">Booked the Senior Citizen Package for my parents. The team was extremely caring and patient with elderly patients. Price was much lower than walking into a lab. Thank you!</p></div></div>
+        <div class="testi-slide"><div class="testi-card"><div class="testi-quote">"</div><div class="testi-top"><img class="testi-avatar" src="https://randomuser.me/api/portraits/men/73.jpg" alt="Vijay Patil"/><div><div class="testi-name">Vijay Patil</div><div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div></div><p class="testi-text">Excellent service! Phlebotomist arrived on time and was very professional. Reports were from Metropolis and were detailed and accurate. Saved me a trip to the lab entirely!</p></div></div>
+        <div class="testi-slide"><div class="testi-card"><div class="testi-quote">"</div><div class="testi-top"><img class="testi-avatar" src="https://randomuser.me/api/portraits/women/25.jpg" alt="Kavya Iyer"/><div><div class="testi-name">Kavya Iyer</div><div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div></div><p class="testi-text">Booked Women's Health Package. The lady phlebotomist made the entire experience comfortable and reassuring. Reports were clear and I shared them with my doctor directly. 5 stars!</p></div></div>
+      </div>
+    </div>
+    <div class="slider-controls">
+      <button class="slider-btn" id="testiPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+      <div class="slider-dots" id="testiDots"></div>
+      <button class="slider-btn" id="testiNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <h2 class="section-title fade-in">Frequently Asked Questions</h2>
+    <div class="divider"></div>
+    <p class="section-sub fade-in">Have questions? We have answers.</p>
+    <div class="faq-grid">
+      <div class="faq-item fade-in"><div class="faq-q">How does home sample collection work? <i class="fas fa-plus"></i></div><div class="faq-a">Book a slot via our form or WhatsApp. Our certified phlebotomist visits your home with sterile equipment, collects the sample, and delivers it to our partner lab. Reports are shared online within 24–48 hours.</div></div>
+      <div class="faq-item fade-in"><div class="faq-q">How long do reports take? <i class="fas fa-plus"></i></div><div class="faq-a">Most routine reports are delivered within 24–48 hours. Some specialized tests may take 3–5 days. We will inform you in advance about the turnaround time for your specific test.</div></div>
+      <div class="faq-item fade-in"><div class="faq-q">Are your phlebotomists certified? <i class="fas fa-plus"></i></div><div class="faq-a">Yes, all our phlebotomists are trained, certified and background-verified professionals. They follow strict safety and hygiene protocols including use of sterile, single-use equipment.</div></div>
+      <div class="faq-item fade-in"><div class="faq-q">Which areas do you serve? <i class="fas fa-plus"></i></div><div class="faq-a">We currently serve Mumbai, Thane, and Mumbra. We are actively expanding. If your area is not covered, please contact us and we will try our best to accommodate you.</div></div>
+      <div class="faq-item fade-in"><div class="faq-q">Are your lab partners NABL accredited? <i class="fas fa-plus"></i></div><div class="faq-a">Yes. We are tied up with Suburban Diagnostics, Metropolis Healthcare, and Thyrocare — all NABL and NABH accredited laboratories with a proven track record of accuracy.</div></div>
+      <div class="faq-item fade-in"><div class="faq-q">How do I receive my reports? <i class="fas fa-plus"></i></div><div class="faq-a">Reports are delivered digitally via WhatsApp and email as a secure PDF link which you can share with your doctor directly. Physical copies are available on request.</div></div>
+      <div class="faq-item fade-in"><div class="faq-q">Do I need to be fasting for my test? <i class="fas fa-plus"></i></div><div class="faq-a">Some tests like fasting blood glucose, lipid profile, and liver function tests require 8–12 hours of fasting. We will inform you of fasting requirements when you book.</div></div>
+      <div class="faq-item fade-in"><div class="faq-q">What is your cancellation policy? <i class="fas fa-plus"></i></div><div class="faq-a">You can cancel or reschedule your appointment up to 2 hours before the scheduled time at no charge. Contact us via WhatsApp or call for any changes.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title fade-in">Get In Touch</h2>
+    <div class="divider"></div>
+    <p class="section-sub fade-in">Have a question or need help booking? We're here for you.</p>
+    <div class="contact-inner">
+      <div class="fade-left">
+        <h3>We'd Love to Hear From You</h3>
+        <p>Whether you want to book a test, have a query about a package, or need help with your reports — our friendly team is always ready to assist.</p>
+        <div class="contact-items">
+          <div class="contact-item"><div class="c-icon"><i class="fas fa-phone-alt"></i></div><div><h4>Phone / WhatsApp</h4><p>+91 92232 13428</p></div></div>
+          <div class="contact-item"><div class="c-icon"><i class="fas fa-envelope"></i></div><div><h4>Email</h4><p>info@healthfirstdiagnostics.com</p></div></div>
+          <div class="contact-item"><div class="c-icon"><i class="fas fa-map-marker-alt"></i></div><div><h4>Service Areas</h4><p>Mumbai · Thane · Mumbra, Maharashtra</p></div></div>
+        </div>
+        <div class="map-ph"><p><i class="fas fa-map-marker-alt" style="margin-right:7px;"></i>Mumbai, Maharashtra, India</p></div>
+      </div>
+      <div class="contact-form-box fade-right">
+        <h3>Send Us a Message</h3>
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group"><label for="c-name">Your Name *</label><input type="text" id="c-name" placeholder="Ramesh Sharma" /></div>
+            <div class="form-group"><label for="c-phone">Mobile Number *</label><input type="tel" id="c-phone" placeholder="9876543210" /></div>
+          </div>
+          <div class="form-group"><label for="c-email">Email Address</label><input type="email" id="c-email" placeholder="ramesh@email.com" /></div>
+          <div class="form-group"><label for="c-msg">Your Message *</label><textarea id="c-msg" rows="4" placeholder="I want to enquire about the Full Body Checkup package..." style="resize:vertical;padding:11px 14px;border:1.5px solid var(--border);border-radius:10px;font-size:0.88rem;background:#fff;transition:border-color 0.2s;"></textarea></div>
+          <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WA FLOAT -->
+<div class="wa-float">
+  <a href="https://wa.me/919223213428?text=Hi%2C%20I%20want%20to%20book%20a%20home%20sample%20collection" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i> <span>Book on WhatsApp</span>
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#hero" class="logo">
+          <div class="logo-img"><i class="fas fa-flask"></i></div>
+          <div class="logo-text"><h1>HealthFirst<br>Diagnostics</h1><span style="color:var(--accent)">Tests You Can Trust</span></div>
+        </a>
+        <p>Accurate testing, timely reports and home sample collection by experts. Your health is our priority.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/919223213428" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#booking">Book Now</a></li>
+          <li><a href="#tests">Tests &amp; Packages</a></li>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#partners">Our Labs</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="#booking">Home Sample Collection</a></li>
+          <li><a href="#tests">Blood Tests</a></li>
+          <li><a href="#tests">Full Body Checkups</a></li>
+          <li><a href="#tests">Diabetes Care</a></li>
+          <li><a href="#tests">Thyroid Profile</a></li>
+          <li><a href="#tests">Women's Health</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="f-contact-item"><i class="fas fa-phone-alt"></i><span>+91 92232 13428</span></div>
+        <div class="f-contact-item"><i class="fas fa-envelope"></i><span>info@healthfirstdiagnostics.com</span></div>
+        <div class="f-contact-item"><i class="fas fa-map-marker-alt"></i><span>Mumbra, Thane, Maharashtra</span></div>
+        <a href="https://wa.me/919223213428" target="_blank" class="footer-wa"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 HealthFirst Diagnostics. All Rights Reserved.</p>
+      <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// HAMBURGER
+const hamburger=document.getElementById('hamburger');
+const mobileMenu=document.getElementById('mobileMenu');
+hamburger.addEventListener('click',()=>{
+  mobileMenu.classList.toggle('open');
+  const s=hamburger.querySelectorAll('span');
+  if(mobileMenu.classList.contains('open')){s[0].style.transform='rotate(45deg) translate(5px,5px)';s[1].style.opacity='0';s[2].style.transform='rotate(-45deg) translate(5px,-5px)';}
+  else{s.forEach(x=>{x.style.transform='';x.style.opacity='';}); }
+});
+mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileMenu.classList.remove('open');hamburger.querySelectorAll('span').forEach(s=>{s.style.transform='';s.style.opacity='';}); }));
+
+// SCROLL ANIMATIONS
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
+document.querySelectorAll('.fade-in,.fade-left,.fade-right').forEach(el=>obs.observe(el));
+
+// ACTIVE NAV
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{let cur='';sections.forEach(s=>{if(window.scrollY>=s.offsetTop-80)cur=s.id;});navLinks.forEach(a=>{a.classList.remove('active');if(a.getAttribute('href')==='#'+cur)a.classList.add('active');});});
+
+// COUNTER
+const cObs=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){const el=entry.target;const target=parseInt(el.getAttribute('data-count'));const suffix=target>=1000?'+':target===48?' Hrs':target===3?'':'+';;let cur=0;const step=Math.max(1,Math.ceil(target/60));const t=setInterval(()=>{cur=Math.min(cur+step,target);el.textContent=(cur>=1000?cur.toLocaleString('en-IN'):cur)+suffix;if(cur>=target)clearInterval(t);},30);cObs.unobserve(el);}});},{threshold:0.5});
+document.querySelectorAll('[data-count]').forEach(el=>cObs.observe(el));
+
+// FAQ
+document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const item=q.parentElement;const was=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!was)item.classList.add('open');});});
+
+// TESTIMONIAL SLIDER
+const track=document.getElementById('testiTrack');
+const slides=track.querySelectorAll('.testi-slide');
+const dotsC=document.getElementById('testiDots');
+let cur=0;
+let spv=window.innerWidth<768?1:3;
+let tg=Math.ceil(slides.length/spv);
+function buildDots(){dotsC.innerHTML='';spv=window.innerWidth<768?1:3;tg=Math.ceil(slides.length/spv);for(let i=0;i<tg;i++){const d=document.createElement('div');d.className='slider-dot'+(i===0?' active':'');d.addEventListener('click',()=>goTo(i));dotsC.appendChild(d);}}
+function goTo(idx){cur=(idx+tg)%tg;const offset=cur*spv;const sw=slides[0].offsetWidth+14;track.style.transform=`translateX(-${offset*sw}px)`;dotsC.querySelectorAll('.slider-dot').forEach((d,i)=>d.classList.toggle('active',i===cur));}
+document.getElementById('testiPrev').addEventListener('click',()=>goTo(cur-1));
+document.getElementById('testiNext').addEventListener('click',()=>goTo(cur+1));
+buildDots();
+window.addEventListener('resize',()=>{buildDots();goTo(0);});
+setInterval(()=>goTo(cur+1),5000);
+
+// SET MIN DATE
+const dateInput=document.getElementById('b-date');
+if(dateInput){const t=new Date();dateInput.min=`${t.getFullYear()}-${String(t.getMonth()+1).padStart(2,'0')}-${String(t.getDate()).padStart(2,'0')}`;}
+
+// BOOKING FORM — send to WhatsApp
+document.getElementById('bookingForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  let valid=true;
+  const name=document.getElementById('b-name');
+  const phone=document.getElementById('b-phone');
+  const email=document.getElementById('b-email');
+  const area=document.getElementById('b-area');
+  const date=document.getElementById('b-date');
+  const time=document.getElementById('b-time');
+  const test=document.getElementById('b-test');
+  const setErr=(id,cond)=>{document.getElementById(id).classList.toggle('error',cond);if(cond)valid=false;};
+  setErr('fg-name',name.value.trim().length<2);
+  setErr('fg-phone',!/^[6-9]\d{9}$/.test(phone.value.replace(/\s+/g,'')));
+  setErr('fg-email',email.value&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value));
+  setErr('fg-area',area.value.trim().length<2);
+  setErr('fg-date',!date.value);
+  setErr('fg-time',!time.value);
+  setErr('fg-test',!test.value);
+  if(valid){
+    // Build WhatsApp message
+    const msg=`🏥 *New Booking — HealthFirst Diagnostics*\n\n`
+      +`👤 *Name:* ${name.value.trim()}\n`
+      +`📱 *Mobile:* ${phone.value.trim()}\n`
+      +`📧 *Email:* ${email.value.trim()||'Not provided'}\n`
+      +`📍 *Area:* ${area.value.trim()}\n`
+      +`📅 *Date:* ${date.value}\n`
+      +`⏰ *Time Slot:* ${time.value}\n`
+      +`🧪 *Test:* ${test.value}\n\n`
+      +`Please confirm the appointment. Thank you!`;
+    const waURL='https://wa.me/919223213428?text='+encodeURIComponent(msg);
+    window.open(waURL,'_blank');
+    document.getElementById('bookingForm').style.display='none';
+    document.getElementById('bookingSuccess').style.display='block';
+  }
+});
+
+// CONTACT FORM
+document.getElementById('contactForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const name=document.getElementById('c-name').value.trim();
+  const phone=document.getElementById('c-phone').value.trim();
+  const msg=document.getElementById('c-msg').value.trim();
+  if(!name||!phone||!msg){alert('Please fill all required fields.');return;}
+  const waMsg=`📩 *Contact Form — HealthFirst Diagnostics*\n\n👤 Name: ${name}\n📱 Phone: ${phone}\n📧 Email: ${document.getElementById('c-email').value.trim()||'N/A'}\n\n💬 Message:\n${msg}`;
+  window.open('https://wa.me/919223213428?text='+encodeURIComponent(waMsg),'_blank');
+  const btn=this.querySelector('button[type=submit]');
+  btn.innerHTML='<i class="fas fa-check-circle"></i> Message Sent!';
+  btn.style.background='#25D366';
+  btn.disabled=true;
+  setTimeout(()=>{btn.innerHTML='<i class="fas fa-paper-plane"></i> Send Message';btn.style.background='';btn.disabled=false;this.reset();},3500);
+});
+</script>
+</body>
+</html>
